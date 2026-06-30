@@ -436,9 +436,18 @@ width:100%;
 
 height:100%;
 
-background:#072d2d;
+background: #072E2D;
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.025) 0%,
+rgba(255,255,255,0) 18%
+),
+#0c201e;
 
 overflow-y:auto;
+
+overscroll-behavior: contain;
 
 z-index:9999;
 
@@ -447,6 +456,8 @@ z-index:9999;
 .pageHeader{
 
 height:65px;
+
+position:relative;
 
 display:flex;
 
@@ -467,7 +478,20 @@ font-family:"Gulzar";
 
 font-weight:normal;
 
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+margin:0;
+
+text-align:center;
+
+white-space:nowrap;
+
 }
+
 
 .backBtn{
 
@@ -894,7 +918,11 @@ font-family:"Gulzar";
 
 font-size:18px;
 
-line-height:2;
+font-weight:100;
+
+line-height:2.2;
+
+word-spacing:6px;
 
 direction:rtl;
 
@@ -908,7 +936,7 @@ color:#ffffff;
 
 font-size:18px;
 
-font-weight:600;
+font-weight:400;
 
 color:#FFD56A;
 
@@ -924,7 +952,7 @@ font-family:"NoorHuda";
 
 font-size:24px;
 
-font-weight:700;
+font-weight:100;
 
 direction:rtl;
 
@@ -934,11 +962,11 @@ text-align-last: right;
 
 padding-right:5px;
 
-line-height:2.9;
+line-height:2.2;
 
 letter-spacing:0.5;
 
-word-spacing:8px;
+word-spacing:6px;
 
 color:#ffffff;
 
@@ -1398,6 +1426,8 @@ font-family:"Gulzar";
 
 color:#ffffff;
 
+
+
 }
 .referenceTitle{
 
@@ -1439,18 +1469,19 @@ transition:.3s;
 
 width:calc(100% - 10px);
 
-margin:1px auto;
-
-background:rgba(255,255,255,.02);
-
-border:1px solid rgba(255,255,255,.10);
-
-border-radius:16px;
-
-box-shadow:0 10px 25px rgba(0,0,0,.28);
-
-padding:10px;
-
+background: #072E2D;
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,.025) 0%,
+rgba(255,255,255,0) 18%
+),
+#0c201e;
+border:1px solid rgba(255,255,255,.08);
+border-radius:28px;
+box-shadow:0 10px 30px rgba(0,0,0,.30);
+padding:22px;
+margin:18px auto;
 overflow:hidden;
 
 }
