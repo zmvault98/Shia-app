@@ -1,0 +1,8962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Islamic App</title>
+
+<style>
+/*==================================
+        FONTS
+==================================*/
+
+@font-face{
+
+font-family:"NoorHuda";
+
+src:url("fonts/NoorHuda.ttf") format("truetype");
+
+font-weight:normal;
+
+font-style:normal;
+
+}
+@font-face{
+
+font-family:"Gulzar";
+
+src:url("fonts/Gulzar.ttf") format("truetype");
+
+font-weight:normal;
+
+font-style:normal;
+
+}
+
+
+
+
+
+/* ============================= */
+/* BASE CSS */
+/* ============================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#072d2d;
+
+font-family:Arial,sans-serif;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+
+/*==================================
+        GLOBAL TEXT CLASSES
+==================================*/
+
+.arabicText{
+
+font-family:"NoorHuda";
+
+direction:rtl;
+
+font-weight:normal;
+
+text-align:center;
+
+}
+
+
+/*==================================
+        ARABIC BUTTONS
+==================================*/
+
+.arabicButton{
+
+font-family:"NoorHuda";
+
+direction:rtl;
+
+font-weight:normal;
+
+text-align:center;
+
+letter-spacing:0;
+
+}
+
+
+
+
+
+
+.urduText{
+
+font-family:"Gulzar";
+
+direction:rtl;
+
+
+
+font-weight:normal;
+
+line-height:2;
+
+}
+
+.englishText{
+
+direction:ltr;
+
+text-align:left;
+
+}
+
+
+/* ============================= */
+/* FUTURE CSS START */
+/* ============================= */
+.cardIcon{
+
+width:48px;
+height:48px;
+
+stroke:#fff;
+fill:none;
+
+stroke-width:2.4;
+
+stroke-linecap:round;
+stroke-linejoin:round;
+
+}
+/* ===================================== */
+/* HOME DASHBOARD */
+/* ===================================== */
+
+.homeDashboard{
+
+width:100%;
+
+padding:15px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:14px;
+
+}
+
+.homeCard{
+
+height:120px;
+
+background:linear-gradient(180deg,#0b6656,#063b34);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:20px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+cursor:pointer;
+
+transition:
+transform .18s ease,
+box-shadow .18s ease,
+background .25s ease;
+
+color:white;
+-webkit-tap-highlight-color:transparent;
+outline:none;
+}
+
+.homeCard:hover{
+
+transform:translateY(-3px);
+
+}
+
+.homeCard svg{
+
+width:38px;
+
+height:38px;
+
+stroke:white;
+
+stroke-width:1.8;
+
+fill:none;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+margin-bottom:10px;
+
+}
+
+.homeCard span{
+
+font-family:"Gulzar";
+
+font-size:16px;
+
+font-weight:normal;
+
+direction:rtl;
+
+text-align:center;
+
+line-height:1.8;
+
+}
+.homeCard:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 14px 28px rgba(0,0,0,.35);
+
+}
+
+.homeCard:active{
+
+transform:scale(.96);
+
+box-shadow:0 4px 10px rgba(0,0,0,.20);
+
+filter:brightness(.95);
+
+}
+.pressEffect{
+
+transform:scale(.94);
+
+box-shadow:0 3px 10px rgba(0,0,0,.18);
+
+filter:brightness(.92);
+
+transition:
+transform .12s ease,
+box-shadow .12s ease,
+filter .12s ease;
+
+}
+/* ===================================== */
+/* PREMIUM IMAM CARD START */
+/* ===================================== */
+
+.imamCard{
+
+width:90%;
+
+margin:10px auto;
+
+padding:10px;
+
+border-radius:22px;
+
+background:linear-gradient(180deg,#0b6656,#063b34);
+
+border:1px solid rgba(255,255,255,.12);
+
+box-shadow:0 10px 25px rgba(0,0,0,.30);
+
+text-align:center;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+.imamCard::before{
+
+content:"";
+
+position:absolute;
+
+top:-40%;
+
+left:-30%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.08),
+transparent
+);
+
+transform:rotate(20deg);
+
+animation:imamGlow 6s linear infinite;
+
+}
+
+@keyframes imamGlow{
+
+0%{transform:translateX(-100%) rotate(20deg);}
+
+100%{transform:translateX(100%) rotate(20deg);}
+
+}
+
+.imamTitle{
+
+font-size:14px;
+
+letter-spacing:1px;
+
+color:#b9ffe7;
+
+margin-bottom:12px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.imamNumber{
+
+font-size:20px;
+
+font-weight:bold;
+
+color:#ffffff;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.imamName{
+
+font-size:19px;
+
+font-weight:bold;
+
+margin-top:8px;
+
+color:#ffffff;
+
+direction:rtl;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.imamYears{
+
+margin-top:10px;
+
+font-size:13px;
+
+color:#d8ffe8;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.imamDuration{
+
+margin-top:8px;
+
+font-size:13px;
+
+color:#ffe9a8;
+
+font-weight:bold;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+
+/* ============================= */
+/* DASHBOARD */
+/* ============================= */
+
+
+
+
+/* ============================= */
+/* PAGES */
+/* ============================= */
+
+
+.page{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#072d2d;
+
+overflow-y:auto;
+
+z-index:9999;
+
+}
+
+.pageHeader{
+
+height:65px;
+
+display:flex;
+
+align-items:center;
+
+padding:0 18px;
+
+background:linear-gradient(180deg,#0b6656,#063b34);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 5px 15px rgba(0,0,0,.20);
+
+}
+.pageHeader h2{
+
+font-family:"Gulzar";
+
+font-weight:normal;
+
+}
+
+.backBtn{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+background:rgba(255,255,255,.08);
+
+border-radius:12px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+cursor:pointer;
+
+margin-right:15px;
+
+}
+
+.backBtn svg{
+
+width:22px;
+
+height:22px;
+
+stroke:white;
+
+stroke-width:2.4;
+
+fill:none;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+}
+
+.pageHeader h2{
+
+
+font-weight:700;
+
+font-size:24px;
+
+letter-spacing:.3px;
+
+color:white;
+
+direction:rtl;
+
+}
+
+.pageContent{
+
+padding:5px;
+
+min-height:calc(100vh - 65px);
+
+}
+
+/*==========================
+      TASBEEH COUNTER
+==========================*/
+
+.tasbeehContainer{
+
+padding:25px 18px 40px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.tasbeehTabs{
+
+width:100%;
+
+display:flex;
+
+background:#134c45;
+
+border-radius:18px;
+
+padding:6px;
+
+margin-bottom:45px;
+
+}
+
+.tasbeehTab{
+
+flex:1;
+
+height:52px;
+
+border:none;
+
+background:transparent;
+
+color:#d6d6d6;
+
+font-size:14px;
+
+font-weight:700;
+
+border-radius:14px;
+
+transition:.3s;
+
+}
+
+.tasbeehTab.active{
+
+background:#ffffff;
+
+color:#0d5f54;
+
+}
+
+.tasbeehCircle{
+
+width:270px;
+
+height:270px;
+
+border-radius:50%;
+
+background:linear-gradient(180deg,#0f7466,#0a5048);
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 18px 40px rgba(0,0,0,.35);
+
+margin-bottom:28px;
+-webkit-tap-highlight-color:transparent;
+
+user-select:none;
+transition:transform .15s ease;
+outline:none;
+}
+
+.tasbeehCount{
+
+font-size:72px;
+
+font-weight:bold;
+
+color:#ffffff;
+
+line-height:1;
+
+}
+
+.tasbeehZikr{
+
+margin-top:12px;
+
+font-size:34px;
+
+
+
+color:#FFD56A;
+
+}
+
+.tasbeehHint{
+
+margin-top:10px;
+
+font-size:18px;
+
+font-style:italic;
+
+color:#d8b36c;
+
+margin-bottom:45px;
+
+text-align:center;
+
+}
+
+.tasbeehButtons{
+
+width:100%;
+
+display:flex;
+
+gap:15px;
+
+}
+
+.minusBtn,
+
+.resetBtn{
+
+flex:1;
+
+height:58px;
+
+border-radius:18px;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+-webkit-tap-highlight-color:transparent;
+
+outline:none;
+
+user-select:none;
+transition:all .15s ease;
+}
+
+.minusBtn{
+
+background:#4d5f5d;
+
+color:white;
+
+border:none;
+
+}
+
+.resetBtn{
+
+background:transparent;
+
+border:2px solid #d8b36c;
+
+color:#d8b36c;
+
+}
+/* ============================= */
+/* READING ENGINE */
+/* ============================= */
+
+
+.readingPage{
+
+width:100%;
+
+}
+
+.readingTitle{
+
+text-align:center;
+
+font-size:27px;
+
+font-weight:700;
+
+color:#ffffff;
+
+margin:8px 0 28px;
+
+letter-spacing:.3px;
+
+}
+/* ============================= */
+/* BISMILLAH BOX */
+/* ============================= */
+
+.bismillahBox{
+
+
+
+font-size:20px;
+
+font-weight:700;
+
+
+color:#ffffff;
+
+padding:14px 20px;
+
+margin:18px 0 25px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:16px;
+
+}
+
+
+.duaCard .bismillahBox{
+
+background:none;
+
+border:none;
+
+box-shadow:none;
+
+margin:0 0 22px;
+
+padding:0;
+
+font-size:30px;
+
+
+
+font-weight:700;
+
+text-align:center;
+
+color:#FFD56A;
+
+}
+
+
+
+.readingBody{
+
+background:transparent;
+border:none;
+box-shadow:none;
+padding:0;
+margin:0;
+border-radius:0;
+
+}
+
+
+.duaCard .readingBody{
+
+background:none;
+
+border:none;
+
+box-shadow:none;
+
+padding:0;
+
+margin:0;
+
+}
+
+
+/* ============================= */
+/* TRANSLATION CARD */
+/* ============================= */
+
+.translationCard{
+
+background:transparent;
+border:none;
+box-shadow:none;
+padding:0;
+margin:25px 0 0;
+border-radius:0;
+
+}
+
+
+.duaCard .translationCard{
+
+background:none;
+
+border:none;
+
+box-shadow:none;
+
+padding:0;
+
+margin:28px 0 0;
+
+}
+
+
+.duaDivider{
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+margin:22px 0;
+
+color:rgba(255,255,255,.90);
+
+font-size:18px;
+
+}
+
+.duaDivider::before,
+
+.duaDivider::after{
+
+content:"";
+
+flex:1;
+
+height:1px;
+
+background:rgba(255,255,255,.30);
+
+}
+
+.readingUrdu{
+
+font-family:"Gulzar";
+
+font-size:18px;
+
+line-height:2;
+
+direction:rtl;
+
+text-align:right;
+
+color:#ffffff;
+
+}
+
+.translationTitle{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#FFD56A;
+
+text-align:right;
+
+margin-bottom:12px;
+
+}
+
+.readingArabic{
+
+
+
+font-size:22px;
+
+font-weight:700;
+
+direction:rtl;
+
+text-align:right;
+
+padding-right:10px;
+
+line-height:2.9;
+
+letter-spacing:0;
+
+word-spacing:8px;
+
+color:#ffffff;
+
+text-rendering:optimizeLegibility;
+
+font-feature-settings:"liga" 1,"calt" 1;
+
+-webkit-font-smoothing:antialiased;
+
+}
+
+
+/* ===================================== */
+/* PREMIUM LIST BUTTON */
+/* ===================================== */
+
+.listButton{
+
+width:100%;
+
+height:72px;
+
+display:flex;
+
+align-items:center;
+
+padding:0 18px;
+
+margin-bottom:14px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:18px;
+
+box-shadow:
+0 10px 22px rgba(0,0,0,.24);
+
+cursor:pointer;
+
+-webkit-tap-highlight-color:transparent;
+
+transition:
+transform .18s ease,
+box-shadow .18s ease,
+background .25s ease;
+
+}
+
+.listButton:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 12px 24px rgba(0,0,0,.28);
+
+}
+
+.listButton:active{
+
+transform:scale(.97);
+
+}
+
+.listIcon{
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-shrink:0;
+
+}
+
+.listIcon svg{
+
+width:30px;
+
+height:30px;
+
+fill:none;
+
+stroke:#F7D774;
+
+stroke-width:2.2;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+transition:.25s;
+
+}
+
+.listText{
+
+flex:1;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 18px;
+
+}
+
+.listEnglish{
+
+font-size:15px;
+
+font-weight:600;
+
+letter-spacing:.3px;
+
+color:#D8FFF2;
+
+}
+
+.listUrdu{
+
+font-family:"Gulzar";
+
+font-size:16px;
+
+font-weight:normal;
+
+direction:rtl;
+
+color:#FFFFFF;
+
+line-height:1.8;
+
+}
+
+.listArrow{
+
+width:28px;
+
+display:flex;
+
+justify-content:flex-end;
+
+align-items:center;
+
+}
+
+.listArrow svg{
+
+width:20px;
+
+height:20px;
+
+stroke:#B8FFF0;
+
+fill:none;
+
+stroke-width:2.5;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+}
+/* ============================= */
+/* SEARCH */
+/* ============================= */
+
+.searchBox{
+
+position:absolute;
+
+bottom:8px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:78%;
+
+height:46px;
+
+display:flex;
+
+align-items:center;
+
+padding:0 15px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.18);
+
+z-index:20;
+
+}
+
+.searchSvg{
+
+width:22px;
+
+height:22px;
+
+stroke:white;
+
+stroke-width:2;
+
+fill:none;
+
+opacity:.9;
+
+}
+
+.searchBox input{
+
+flex:1;
+
+background:none;
+
+border:none;
+
+outline:none;
+
+margin-left:10px;
+
+font-size:14px;
+
+color:white;
+
+}
+
+.searchBox input::placeholder{
+
+color:#d8f5e8;
+
+}
+
+.searchResults{
+
+display:none;
+
+position:absolute;
+
+top:230px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:82%;
+
+background:#0b4b40;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 12px 30px rgba(0,0,0,.35);
+
+z-index:999;
+
+}
+
+.searchItem{
+
+padding:14px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+cursor:pointer;
+
+direction:rtl;
+
+}
+
+.searchItem:last-child{
+
+border:none;
+
+}
+
+.noResult{
+
+padding:18px;
+
+text-align:center;
+
+color:#dfffee;
+
+}
+/* ============================= */
+/* HEADER FIX */
+/* ============================= */
+
+.header{
+position:relative;
+height:220px;
+margin:15px;
+border-radius:25px;
+overflow:hidden;
+background:linear-gradient(180deg,#0a5c4c,#06342d);
+box-shadow:0 0 20px rgba(0,255,170,.18);
+}
+
+.timeBox{
+position:absolute;
+top:45px;
+left:0;
+width:100%;
+text-align:center;
+z-index:5;
+}
+
+.bismillah{
+position:absolute;
+top:10px;
+left:0;
+width:100%;
+text-align:center;
+font-size:17px;
+font-weight:bold;
+direction:rtl;
+z-index:5;
+}
+
+.moon{
+position:absolute;
+top:12px;
+right:15px;
+font-size:22px;
+z-index:6;
+}
+
+.mosque{
+position:absolute;
+right:0;
+bottom:0;
+width:170px;
+height:170px;
+opacity:.9;
+}
+
+
+
+
+
+.time{
+
+font-size:30px;
+
+font-weight:bold;
+
+letter-spacing:2px;
+
+color:#ffffff;
+
+}
+.tasbeehCircle:active{
+
+transform:scale(.96);
+
+}
+
+.minusBtn:active{
+
+transform:scale(.94);
+
+opacity:.85;
+
+}
+
+.resetBtn:active{
+
+transform:scale(.94);
+
+opacity:.85;
+
+}
+
+/*==========================
+      REFERENCE CARD
+==========================*/
+
+.referenceCard{
+
+background:transparent;
+border:none;
+box-shadow:none;
+border-radius:0;
+margin-top:25px;
+
+border-radius:18px;
+
+overflow:hidden;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.referenceHeader{
+
+padding:16px 18px;
+
+font-size:14px;
+
+font-weight:bold;
+
+color:#D8B36C;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+cursor:pointer;
+
+-webkit-tap-highlight-color:transparent;
+
+user-select:none;
+
+}
+
+.referenceContent{
+
+display:none;
+
+padding:18px;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+font-size:18px;
+
+line-height:2;
+
+direction:rtl;
+
+text-align:right;
+
+font-family:'Reading Urdu';
+
+color:#ffffff;
+
+}
+.referenceTitle{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+.referenceIcon{
+
+width:22px;
+
+height:22px;
+
+fill:#D8B36C;
+
+flex-shrink:0;
+
+}
+.referenceArrow{
+
+font-size:15px;
+
+color:#D8B36C;
+
+transition:.3s;
+
+}
+
+
+
+
+/* ===================================== */
+/* PREMIUM DUA READING CARD */
+/* ===================================== */
+.duaCard{
+
+width:calc(100% - 10px);
+
+margin:1px auto;
+
+background:rgba(255,255,255,.02);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:16px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.28);
+
+padding:10px;
+
+overflow:hidden;
+
+}
+
+
+
+/*==================================
+        DUA SEARCH
+==================================*/
+
+.duaSearchContainer{
+
+display:flex;
+
+align-items:center;
+
+width:100%;
+
+height:58px;
+
+padding:0 18px;
+
+margin-bottom:16px;
+
+/* NEW BACKGROUND */
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(12px);
+
+-webkit-backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,.10);
+
+border-radius:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+box-sizing:border-box;
+
+transition:.25s;
+
+}
+
+.duaSearchContainer:focus-within{
+
+background:rgba(255,255,255,.07);
+
+border-color:rgba(217,194,107,.55);
+
+box-shadow:0 0 18px rgba(217,194,107,.18);
+
+}
+
+.duaSearchIcon{
+
+width:22px;
+
+height:22px;
+
+margin-right:14px;
+
+flex-shrink:0;
+
+stroke:#d9c26b;
+
+stroke-width:2;
+
+fill:none;
+
+stroke-linecap:round;
+
+stroke-linejoin:round;
+
+}
+
+.duaSearchInput{
+
+flex:1;
+
+height:100%;
+
+background:transparent;
+
+border:none;
+
+outline:none;
+
+padding:0;
+
+margin:0;
+
+font-size:16px;
+
+font-weight:500;
+
+color:#ffffff;
+
+box-sizing:border-box;
+
+}
+
+.duaSearchInput::placeholder{
+
+color:rgba(255,255,255,.60);
+
+}
+
+.duaSearchContainer:focus-within{
+
+border-color:#d9c26b;
+
+box-shadow:0 0 18px rgba(217,194,107,.18);
+
+}
+
+
+
+
+
+/*==================================
+        ISM HEADER
+==================================*/
+
+.ismHeader{
+
+display:flex;
+
+gap:8px;
+
+margin:18px;
+
+padding:6px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:22px;
+
+backdrop-filter:blur(14px);
+
+-webkit-backdrop-filter:blur(14px);
+
+box-shadow:0 8px 22px rgba(0,0,0,.20);
+
+}
+
+.ismTab{
+
+flex:1;
+
+height:48px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:16px;
+
+color:#fff;
+
+font-size:18px;
+
+font-weight:700;
+
+transition:.30s;
+
+cursor:pointer;
+
+user-select:none;
+
+}
+
+.activeTab{
+
+background:#fff;
+
+color:#111;
+
+box-shadow:0 8px 18px rgba(255,255,255,.18);
+
+}
+
+
+
+/*==================================
+        PREMIUM CARD
+==================================*/
+
+.ismCard{
+
+position:relative;
+
+width:calc(100% - 36px);
+
+height:360px;
+
+margin:18px auto 30px;
+
+border-radius:26px;
+
+background:rgba(255,255,255,.045);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+overflow:hidden;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:
+
+0 18px 35px rgba(0,0,0,.28),
+
+inset 0 1px rgba(255,255,255,.08);
+
+}
+
+
+
+/*==================================
+        INNER FRAME
+==================================*/
+
+.innerFrame{
+
+position:absolute;
+
+top:18px;
+
+left:18px;
+
+right:18px;
+
+bottom:18px;
+
+border:1px solid rgba(217,194,107,.28);
+
+border-radius:18px;
+
+pointer-events:none;
+
+}
+
+
+
+/*==================================
+        FRAME CORNERS
+==================================*/
+
+.corner{
+
+position:absolute;
+
+width:26px;
+
+height:26px;
+
+border-color:#D9C26B;
+
+}
+
+.tl{
+
+top:18px;
+
+left:18px;
+
+border-top:2px solid #D9C26B;
+
+border-left:2px solid #D9C26B;
+
+border-radius:8px 0 0 0;
+
+}
+
+.tr{
+
+top:18px;
+
+right:18px;
+
+border-top:2px solid #D9C26B;
+
+border-right:2px solid #D9C26B;
+
+border-radius:0 8px 0 0;
+
+}
+
+.bl{
+
+bottom:18px;
+
+left:18px;
+
+border-bottom:2px solid #D9C26B;
+
+border-left:2px solid #D9C26B;
+
+border-radius:0 0 0 8px;
+
+}
+
+.br{
+
+bottom:18px;
+
+right:18px;
+
+border-bottom:2px solid #D9C26B;
+
+border-right:2px solid #D9C26B;
+
+border-radius:0 0 8px 0;
+
+}
+
+
+
+/*==================================
+        TEXT
+==================================*/
+
+.ismArabic{
+
+
+
+font-size:39px;
+
+font-weight:700;
+
+color:#fff;
+
+letter-spacing:1px;
+
+margin-bottom:18px;
+
+text-align:center;
+
+}
+
+.ismDivider{
+
+width:90px;
+
+height:2px;
+
+background:#D9C26B;
+
+border-radius:2px;
+
+margin-bottom:22px;
+
+opacity:.85;
+
+}
+
+.ismEnglish{
+
+font-size:28px;
+
+font-weight:700;
+
+color:#D9C26B;
+
+letter-spacing:2px;
+
+margin-bottom:14px;
+
+}
+
+.ismUrdu{
+
+font-size:18px;
+
+color:#fff;
+
+font-weight:normal;
+
+line-height:2;
+
+}
+
+
+
+/*==================================
+        FOOTER
+==================================*/
+
+.ismFooter{
+
+display:flex;
+
+gap:14px;
+
+margin:0 18px 26px;
+
+}
+
+.ismButton{
+
+flex:1;
+
+height:54px;
+
+border:none;
+
+outline:none;
+
+border-radius:18px;
+
+background:linear-gradient(180deg,#0b6656,#063b34);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:#fff;
+
+font-size:17px;
+
+font-weight:700;
+
+box-shadow:0 10px 22px rgba(0,0,0,.24);
+
+transition:.25s;
+
+}
+
+.ismButton:active{
+
+transform:scale(.98);
+
+}
+
+/* ============================= */
+/* FUTURE CSS END */
+/* ============================= */
+
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ============================= -->
+<!-- HEADER START -->
+<!-- ============================= -->
+
+
+
+<div class="header">
+
+<div class="moon">☾</div>
+
+<div class="bismillah arabicText">
+
+بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْم
+
+</div>
+
+<div class="timeBox">
+
+<div class="time" id="time">
+--:--:--
+</div>
+
+<div class="date" id="date">
+Loading...
+</div>
+
+<div class="hijri" id="hijri">
+Loading Hijri...
+</div>
+
+</div>
+
+<svg class="mosque" viewBox="0 0 800 800">
+
+<path d="M300 450 Q400 200 500 450" fill="#0d4f44"/>
+
+<rect x="300" y="450" width="200" height="80" fill="#0d4f44"/>
+
+<rect x="600" y="300" width="40" height="250" fill="#0d4f44"/>
+
+<polygon points="620,200 590,300 650,300" fill="#0d4f44"/>
+
+<rect x="590" y="360" width="60" height="15" fill="#0b6b59"/>
+
+<circle cx="400" cy="260" r="12" fill="#d8ffd8"/>
+
+</svg>
+
+
+<div class="searchBox">
+
+<svg class="searchSvg" viewBox="0 0 24 24">
+
+<circle cx="11" cy="11" r="7"/>
+
+<line x1="16.5" y1="16.5" x2="21" y2="21"/>
+
+</svg>
+
+<input
+
+type="text"
+
+id="globalSearch"
+
+placeholder="قرآن، دعا، حدیث..."
+
+autocomplete="off"
+
+onkeyup="searchApp()"
+
+>
+
+</div>
+
+<div
+
+id="searchResults"
+
+class="searchResults"
+
+>
+
+</div>
+
+</div>
+
+<div class="imamCard">
+
+<div class="imamTitle urduText">
+
+ائمہ اہل بیت
+
+</div>
+
+<div class="imamNumber" id="imamNumber">
+01
+</div>
+
+<div class="imamName urduText" id="imamName">
+
+امام علی علیہ السلام
+
+</div>
+
+<div class="imamYears" id="imamYears">
+11 AH → 40 AH
+</div>
+
+<div class="imamDuration" id="imamDuration">
+29 Years of Imamat
+</div>
+
+</div>
+
+<!-- ============================= -->
+<!-- HEADER END -->
+<!-- ============================= -->
+
+
+
+<!-- ============================= -->
+<!-- DASHBOARD START -->
+<!-- ============================= -->
+
+
+<div class="homeDashboard">
+<button class="homeCard" onclick="openPage('quranPage')">
+<svg class="cardIcon" viewBox="0 0 64 64" fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Left Page -->
+<path d="M12 16
+C18 12 25 12 32 16
+V52
+C25 48 18 48 12 52Z"/>
+
+<!-- Right Page -->
+<path d="M52 16
+C46 12 39 12 32 16
+V52
+C39 48 46 48 52 52Z"/>
+
+<!-- Center Spine -->
+<path d="M32 16V52"/>
+
+<!-- Left Text -->
+<path d="M18 23H27"/>
+<path d="M18 29H27"/>
+<path d="M18 35H27"/>
+
+<!-- Right Text -->
+<path d="M37 23H46"/>
+<path d="M37 29H46"/>
+<path d="M37 35H46"/>
+
+</svg>
+<span>قرآن مجید</span>
+</button>
+
+<button class="homeCard" onclick="openPage('hadithPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Open Book -->
+<path d="M18 18
+C24 15 28 15 32 18
+V46
+C28 43 24 43 18 46Z"/>
+
+<path d="M46 18
+C40 15 36 15 32 18
+V46
+C36 43 40 43 46 46Z"/>
+
+<!-- Spine -->
+<path d="M32 18V46"/>
+
+<!-- Tasbih -->
+<circle cx="50" cy="18" r="2"/>
+<circle cx="46" cy="14" r="2"/>
+<circle cx="42" cy="18" r="2"/>
+
+</svg>
+<span>حدیث</span>
+</button>
+
+<button class="homeCard" onclick="openPage('asmaPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.3"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+  <!-- Outer Circle -->
+  <circle cx="32" cy="32" r="18"/>
+
+  <!-- Inner Circle -->
+  <circle cx="32" cy="32" r="8"/>
+
+  <!-- Top -->
+  <path d="M32 10V18"/>
+
+  <!-- Bottom -->
+  <path d="M32 46V54"/>
+
+  <!-- Left -->
+  <path d="M10 32H18"/>
+
+  <!-- Right -->
+  <path d="M46 32H54"/>
+
+  <!-- Diagonal -->
+  <path d="M18 18L23 23"/>
+  <path d="M41 41L46 46"/>
+
+  <path d="M46 18L41 23"/>
+  <path d="M18 46L23 41"/>
+
+  <!-- Center Star -->
+  <path d="
+  M32 26
+  L34 30
+  L38 32
+  L34 34
+  L32 38
+  L30 34
+  L26 32
+  L30 30
+  Z"/>
+
+</svg>
+<span>اسمائے الٰہی</span>
+</button>
+
+<button class="homeCard" onclick="openPage('duaPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="
+M32 52
+L27 47
+C15 36 10 30 10 21
+C10 15 15 10 21 10
+C25 10 29 12 32 16
+C35 12 39 10 43 10
+C49 10 54 15 54 21
+C54 30 49 36 37 47
+Z"/>
+
+</svg>
+<span>دعائیں</span>
+</button>
+
+<button class="homeCard" onclick="openPage('ziaratPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Kaaba -->
+<rect x="20" y="22" width="24" height="24" rx="2"/>
+
+<!-- Golden Belt -->
+<path d="M20 28H44"/>
+
+<!-- Door -->
+<path d="M30 34V46"/>
+
+<!-- Base -->
+<path d="M18 46H46"/>
+
+<!-- Roof -->
+<path d="M20 22L32 16L44 22"/>
+
+</svg>
+<span>زیارات</span>
+</button>
+
+<button class="homeCard" onclick="openPage('taqibatPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Prayer Mat -->
+<path d="M18 52V18
+L32 10
+L46 18
+V52
+Z"/>
+
+<!-- Inner Border -->
+<path d="M22 48V20
+L32 14
+L42 20
+V48
+Z"/>
+
+<!-- Tasbih -->
+<circle cx="32" cy="30" r="2"/>
+
+<circle cx="28" cy="34" r="2"/>
+
+<circle cx="32" cy="38" r="2"/>
+
+<circle cx="36" cy="34" r="2"/>
+
+<!-- Bottom Tassel -->
+<path d="M28 52V56"/>
+
+<path d="M32 52V58"/>
+
+<path d="M36 52V56"/>
+
+</svg>
+<span>تعقیبات</span>
+</button>
+
+<button class="homeCard" onclick="openPage('sahifaPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Book -->
+<rect x="18" y="12" width="28" height="40" rx="3"/>
+
+<!-- Bookmark -->
+<path d="M32 12V22L36 19L40 22V12"/>
+
+<!-- Cover Decoration -->
+<circle cx="32" cy="28" r="5"/>
+
+<path d="M32 22V34"/>
+
+<path d="M26 28H38"/>
+
+<!-- Bottom Lines -->
+<path d="M24 40H40"/>
+
+<path d="M24 45H36"/>
+
+</svg>
+<span>صحیفہ سجادیہ</span>
+</button>
+
+<button class="homeCard" onclick="openPage('libraryPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Left Book -->
+<rect x="12" y="16" width="10" height="34" rx="2"/>
+
+<!-- Middle Book -->
+<rect x="27" y="12" width="10" height="38" rx="2"/>
+
+<!-- Right Book -->
+<rect x="42" y="16" width="10" height="34" rx="2"/>
+
+<!-- Book Lines -->
+<path d="M16 24H18"/>
+<path d="M16 30H18"/>
+
+<path d="M31 22H33"/>
+<path d="M31 28H33"/>
+
+<path d="M46 24H48"/>
+<path d="M46 30H48"/>
+
+<!-- Bottom Shelf -->
+<path d="M10 52H54"/>
+
+</svg>
+<span>اسلامی لائبریری</span>
+</button>
+
+<button class="homeCard" onclick="openPage('masomeenPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Star -->
+<path d="M32 8
+L33.5 12
+L38 13
+L34.5 16
+L35.5 20
+L32 18
+L28.5 20
+L29.5 16
+L26 13
+L30.5 12
+Z"/>
+
+<!-- Dome -->
+<path d="M18 34
+C18 24 24 18 32 18
+C40 18 46 24 46 34"/>
+
+<!-- Shrine -->
+<rect x="22" y="34" width="20" height="16" rx="2"/>
+
+<!-- Door -->
+<path d="M29 50V40"/>
+
+<!-- Base -->
+<path d="M18 50H46"/>
+
+<!-- Crescent -->
+<path d="M48 16
+A5 5 0 1 1 48 26
+A4 4 0 1 0 48 16"/>
+
+</svg>
+<span>چودہ معصومینؑ</span>
+</button>
+
+<button class="homeCard" onclick="openPage('tasbihPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Digital Counter -->
+<rect x="18" y="16" width="28" height="20" rx="4"/>
+
+<!-- Display -->
+<path d="M24 26H40"/>
+
+<!-- Button -->
+<circle cx="32" cy="46" r="6"/>
+
+<!-- Plus -->
+<path d="M32 43V49"/>
+<path d="M29 46H35"/>
+
+</svg>
+<span>تسبیح کاؤنٹر</span>
+</button>
+
+<button class="homeCard" onclick="openPage('calendarPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Calendar -->
+<rect x="16" y="14" width="32" height="36" rx="3"/>
+
+<!-- Rings -->
+<path d="M24 10V18"/>
+<path d="M40 10V18"/>
+
+<!-- Header -->
+<path d="M16 22H48"/>
+
+<!-- Crescent -->
+<path d="M36 34
+A6 6 0 1 1 36 46
+A5 5 0 1 0 36 34"/>
+
+<!-- Star -->
+<path d="M24 30L25 33L28 34L25 36L26 39L24 37L22 39L23 36L20 34L23 33Z"/>
+
+</svg>
+<span>اسلامی کیلنڈر</span>
+</button>
+
+<button class="homeCard" onclick="openPage('prayerPage')">
+<svg class="cardIcon" viewBox="0 0 64 64"
+fill="none"
+stroke="currentColor"
+stroke-width="2.4"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<!-- Dome -->
+<path d="M22 30
+C22 20 27 14 32 14
+C37 14 42 20 42 30"/>
+
+<!-- Mosque -->
+<rect x="22" y="30" width="20" height="18" rx="2"/>
+
+<!-- Minaret -->
+<path d="M46 18V48"/>
+<path d="M44 22H48"/>
+
+<!-- Clock -->
+<circle cx="18" cy="18" r="6"/>
+
+<path d="M18 18L18 15"/>
+
+<path d="M18 18L21 20"/>
+
+</svg>
+<span>اوقات نماز</span>
+</button>
+</div>
+
+
+
+<!-- ============================= -->
+<!-- DASHBOARD END -->
+<!-- ============================= -->
+
+
+
+<!-- ============================= -->
+<!-- FUTURE PAGES START -->
+<!-- ============================= -->
+
+<div id="quranPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+
+<svg viewBox="0 0 24 24">
+
+<path d="M15 18L9 12L15 6"/>
+
+</svg>
+
+</button>
+
+<h2>قرآن مجید</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="hadithPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>حدیث</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+<div id="asmaPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>اسمائے الٰہی</h2>
+
+</div>
+
+
+<!--==================================
+        ISM SELECTOR
+===================================-->
+
+<div class="ismHeader">
+<div id="fatimaTab" class="ismTab arabicButton">
+
+    فاطمة ؑ
+
+</div>
+    <div id="aliTab" class="ismTab arabicButton">
+
+        علي ؑ
+
+    </div>
+
+    <div id="muhammadTab" class="ismTab arabicButton">
+
+        محمد ﷺ
+
+    </div>
+
+    <div id="allahTab" class="ismTab activeTab arabicButton">
+
+         اللّٰه ﷻ
+
+    </div>
+
+</div>
+
+
+<!--==================================
+        PREMIUM CARD
+===================================-->
+
+<div class="ismCard">
+
+    <!-- Decorative Border -->
+
+    <div class="innerFrame"></div>
+
+    <!-- SVG Corners -->
+
+    <span class="corner tl"></span>
+
+    <span class="corner tr"></span>
+
+    <span class="corner bl"></span>
+
+    <span class="corner br"></span>
+
+
+    <!-- Arabic -->
+
+    <div id="ismArabic" class="ismArabic arabicText">
+
+        الله
+
+    </div>
+
+
+    <!-- Divider -->
+
+    <div class="ismDivider"></div>
+
+
+    <!-- English -->
+
+
+
+
+    <!-- Urdu -->
+
+<div id="ismUrdu" class="ismUrdu urduText">
+
+    ذاتی نام
+
+</div>
+
+</div>
+
+
+
+<!--==================================
+        BOTTOM BUTTONS
+===================================-->
+
+<div class="ismFooter">
+
+    <button id="prevBtn" class="ismButton">
+
+        Previous
+
+    </button>
+
+    <button id="nextBtn" class="ismButton">
+
+        Next
+
+    </button>
+
+</div>
+
+
+<div class="pageContent">
+
+</div>
+
+</div>
+<div id="duaPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>دعائیں</h2>
+
+</div>
+
+<div class="pageContent">
+  
+  
+<!--========== DUA SEARCH ==========-->
+
+<div class="duaSearchContainer">
+
+    <svg class="duaSearchIcon"
+         viewBox="0 0 24 24">
+
+        <circle cx="11"
+                cy="11"
+                r="7"></circle>
+
+        <line x1="20"
+              y1="20"
+              x2="16.5"
+              y2="16.5"></line>
+
+    </svg>
+
+    <input
+        type="text"
+        id="duaSearchInput"
+        class="duaSearchInput"
+        placeholder="Search Duas..."
+        autocomplete="off"
+        spellcheck="false">
+
+</div>
+  
+  
+<div class="listButton duaItem" onclick="openDua(1)">
+  
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+<path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+<circle cx="32" cy="32" r="4"/>
+
+</svg>
+
+            <path d="M12 3L14 8L19 10L14 12L12 17L10 12L5 10L10 8Z"/>
+
+            <circle cx="12" cy="10" r="1.5"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Faraj
+        </div>
+
+        <div class="listUrdu">
+            دعائے فرج
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+
+        </svg>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<div class="listButton" onclick="openDua(2)">
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+            <circle cx="32" cy="32" r="4"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Ahad
+        </div>
+
+        <div class="listUrdu">
+            دعائے عہد
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+<div class="listButton" onclick="openDua(3)">
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+            <circle cx="32" cy="32" r="4"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Kumayl
+        </div>
+
+        <div class="listUrdu">
+            دعائے کمیل
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+<div class="listButton" onclick="openDua(4)">
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+            <circle cx="32" cy="32" r="4"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Nudba
+        </div>
+
+        <div class="listUrdu">
+            دعائے ندبہ
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<div class="listButton" onclick="openDua(5)">
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+            <circle cx="32" cy="32" r="4"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Tawassul
+        </div>
+
+        <div class="listUrdu">
+            دعائے توسل
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(6)">
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+            <circle cx="32" cy="32" r="4"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Mashlool
+        </div>
+
+        <div class="listUrdu">
+            دعائے مشلول
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+<div class="listButton" onclick="openDua(7)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Dua-e-Sabah</div>
+        <div class="listUrdu">دعائے صباح</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openDua(8)">
+
+    <!-- Left Icon -->
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+
+            <circle cx="32" cy="32" r="4"/>
+
+        </svg>
+
+    </div>
+
+    <!-- Text -->
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Iftitah
+        </div>
+
+        <div class="listUrdu">
+            دعائے افتتاح
+        </div>
+
+    </div>
+
+    <!-- Arrow -->
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+
+            <path d="M8 5L16 12L8 19"/>
+
+        </svg>
+
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openDua(9)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Mujeer
+        </div>
+
+        <div class="listUrdu">
+            دعائے مجیر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+<div class="listButton" onclick="openDua(10)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Jawshan Kabir
+        </div>
+
+        <div class="listUrdu">
+            دعائے جوشن کبیر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(11)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Jawshan Saghir
+        </div>
+
+        <div class="listUrdu">
+            دعائے جوشن صغیر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(12)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Simat
+        </div>
+
+        <div class="listUrdu">
+            دعائے سمات
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="listButton" onclick="openDua(13)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Yastasheer
+        </div>
+
+        <div class="listUrdu">
+            دعائے یستشیر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(14)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Adilah
+        </div>
+
+        <div class="listUrdu">
+            دعائے عدیلہ
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="listButton" onclick="openDua(15)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Tawbah
+        </div>
+
+        <div class="listUrdu">
+            دعائے توبہ
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+<div class="listButton" onclick="openDua(16)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Makarim-ul-Akhlaq
+        </div>
+
+        <div class="listUrdu">
+            دعائے مکارم الاخلاق
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="listButton" onclick="openDua(17)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Arafah
+        </div>
+
+        <div class="listUrdu">
+            دعائے عرفہ
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+<div class="listButton" onclick="openDua(18)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Abu Hamza Thumali
+        </div>
+
+        <div class="listUrdu">
+            دعائے ابوحمزہ ثمالی
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(19)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Noor
+        </div>
+
+        <div class="listUrdu">
+            دعائے نور
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="listButton" onclick="openDua(20)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Baha
+        </div>
+
+        <div class="listUrdu">
+            دعائے بہا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+<div class="listButton" onclick="openDua(21)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Asharat
+        </div>
+
+        <div class="listUrdu">
+            دعائے عشرات
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div class="listButton" onclick="openDua(22)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Qunut
+        </div>
+
+        <div class="listUrdu">
+            دعائے قنوت
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+<div class="listButton" onclick="openDua(23)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Hifz
+        </div>
+
+        <div class="listUrdu">
+            دعائے حفظ
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+<div class="listButton" onclick="openDua(24)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Rizq
+        </div>
+
+        <div class="listUrdu">
+            دعائے رزق
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+<div class="listButton" onclick="openDua(25)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Shifa
+        </div>
+
+        <div class="listUrdu">
+            دعائے شفا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openDua(26)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Safar
+        </div>
+
+        <div class="listUrdu">
+            دعائے سفر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(27)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Karb
+        </div>
+
+        <div class="listUrdu">
+            دعائے رفعِ کرب
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+<div class="listButton" onclick="openDua(28)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Hajat
+        </div>
+
+        <div class="listUrdu">
+            دعائے حاجت
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(29)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            wahsht-e-Qabar
+        </div>
+
+        <div class="listUrdu">
+             وحشت قبر  
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openDua(30)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Farzand
+        </div>
+
+        <div class="listUrdu">
+            دعائے اولاد
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+<div id="ziaratPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>زیارات</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="taqibatPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>تعقیبات</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="sahifaPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>صحیفہ سجادیہ</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="libraryPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>اسلامی لائبریری</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="masomeenPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>چودہ معصومینؑ</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="tasbihPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>تسبیح کاؤنٹر</h2>
+
+</div>
+
+<div class="pageContent">
+<div class="tasbeehContainer">
+
+    <div class="tasbeehTabs">
+
+        <button class="tasbeehTab active" id="zehraTab">
+            Tasbeeh Zehra(s)
+        </button>
+
+        <button class="tasbeehTab" id="unlimitedTab">
+            Unlimited Count
+        </button>
+
+    </div>
+
+    <div class="tasbeehCircle" id="tasbeehCircle">
+
+        <div class="tasbeehCount" id="tasbeehCount">
+            0
+        </div>
+
+        <div class="tasbeehZikr arabicText" id="tasbeehZikr">
+            اللّٰهُ أَكْبَرُ 
+        </div>
+
+    </div>
+
+    <div class="tasbeehHint">
+
+        Tap the screen to increase counter
+
+    </div>
+
+    <div class="tasbeehButtons">
+
+        <button class="minusBtn" id="minusBtn">
+
+            − Minus 1
+
+        </button>
+
+        <button class="resetBtn" id="resetBtn">
+
+            ↻ Reset
+
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+</div>
+
+<div id="calendarPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>اسلامی کیلنڈر</h2>
+
+</div>
+
+<div class="pageContent">
+
+
+</div>
+
+</div>
+
+<div id="prayerPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>اوقات نماز</h2>
+
+</div>
+
+<div class="pageContent">
+
+</div>
+
+</div>
+
+<div id="duaDetailPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+
+            <svg viewBox="0 0 24 24">
+
+                <path d="M15 18L9 12L15 6"/>
+
+            </svg>
+
+        </button>
+
+        <h2>دعا</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+<div class="readingPage">
+<div class="duaCard">
+<div class="readingTitle" id="duaTitle">
+    Dua - E - Faraj
+</div>
+<div class="tasbeehZikr arabicText" id="duaBismillah">
+
+</div>
+<div class="duaDivider">❀</div>
+<div class="readingBody">
+
+<div class="readingArabic arabicText" id="duaArabic">
+
+اللَّهُمَّ كُنْ لِوَلِيِّكَ الْحُجَّةِ بْنِ الْحَسَنِ، صَلَوَاتُكَ عَلَيْهِ وَعَلَى آبَائِهِ، فِي هَذِهِ السَّاعَةِ وَفِي كُلِّ سَاعَةٍ، وَلِيًّا، وَحَافِظًا، وَقَائِدًا، وَنَاصِرًا، وَدَلِيلًا، وَعَيْنًا، حَتَّىٰ تُسْكِنَهُ أَرْضَكَ طَوْعًا، وَتُمَتِّعَهُ فِيهَا طَوِيلًا.
+</div>
+
+</div>
+<div class="duaDivider">❀</div>
+<div class="translationCard">
+  
+<div class="translationTitle">
+
+ترجمہ
+
+</div>
+<div class="readingUrdu" id="duaTranslation">
+
+اے اللہ! اپنے ولی، حضرت حجت بن الحسن (عجل اللہ تعالیٰ فرجہ الشریف) کے لیے، اس گھڑی میں اور ہر گھڑی، سرپرست، محافظ، رہنما، مددگار، دلیل اور نگہبان بن جا، یہاں تک کہ تو انہیں اپنی زمین میں خوشی و اطمینان کے ساتھ سکونت عطا فرمائے، اور انہیں طویل مدت تک اس سے بہرہ مند رکھے۔
+
+</div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent" id="duaReference">
+
+<b>الکافی:</b>
+
+<br><br>
+
+• جلد 4
+
+<br>
+
+• صفحہ 162 
+
+<br>
+
+•   باب: اعمال شب 23 رمضان
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    </div>
+
+</div>
+
+<div id="duaAhadPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء العهد</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Ahad
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaKumaylPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء كميل</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Kumayl
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaTawassulPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء التوسل</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Tawassul
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="duaNudbaPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء الندبة</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Nudba
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="duaSabahPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء الصباح</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Sabah
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaMashloolPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء المشلول</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Mashlool
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<div id="duaYastasheerPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء يستشير</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Yastasheer
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaMujirPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء المجير</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Mujir
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaJawshanKabirPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء الجوشن الكبير</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Jawshan Kabir
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaJawshanSaghirPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء الجوشن الصغير</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Jawshan Saghir
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaIftitahPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء الافتتاح</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Iftitah
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="duaAbuHamzaPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء أبي حمزة الثمالي</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Abu Hamza al-Thumali
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaMakarimPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء مكارم الأخلاق</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Makarim al-Akhlaq
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="duaNoorPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء النور</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Noor
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="duaSimaatPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء السمات</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Simaat
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaAdilaPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء العديلة</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Adila
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="duaHajatPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء الحاجة</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Hajat
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+ 
+
+<div id="duaArafahPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>دعاء عرفة</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Dua Arafah
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Dua Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="hadithKisaPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>حديث الكساء</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Hadith al-Kisa
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Text Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="munajatShabaniaPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>المناجاة الشعبانية</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Shabania
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div id="munajatTaibeenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة التائبين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Taibeen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="munajatShaakireenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة الشاكرين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Shaakireen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="munajatMuteenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة المطيعين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Muteen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="munajatMuhibbeenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة المحبين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Muhibbeen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="munajatZakireenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة الذاكرين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Zakireen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="munajatKhaifeenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة الخائفين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Khaifeen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div id="munajatRajeenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة الراجين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Rajeen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="munajatMuslimeenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة المسلمين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Muslimeen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="munajatMureedeenPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2>مناجاة المريدين</h2>
+
+    </div>
+
+    <div class="pageContent">
+
+        <div class="readingPage">
+
+            <div class="readingTitle">
+                Munajat Mureedeen
+            </div>
+
+            <div class="bismillahBox"></div>
+
+            <div class="readingBody">
+
+                <div class="readingArabic">
+
+<!-- Arabic Munajat Here -->
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu">
+
+<!-- Urdu Translation Here -->
+
+                </div>
+<div class="referenceCard">
+
+    <div class="referenceHeader" onclick="toggleReference(this)">
+
+    <div class="referenceTitle">
+
+        <svg class="referenceIcon" viewBox="0 0 24 24">
+
+            <path d="M19 2H8a2 2 0 0 0-2 2v13a3 3 0 0 1 3-3h10V2zm2 18H9a1 1 0 0 0 0 2h12v-2z"/>
+
+        </svg>
+
+        <span>Reference</span>
+
+    </div>
+
+    <span class="referenceArrow">▼</span>
+
+</div>
+<div class="referenceContent">
+
+<b>Paste:</b>
+
+<br><br>
+
+• Kitab
+
+<br>
+
+•  Bab
+
+<br>
+
+•      Hawala
+
+</div>
+
+</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<!-- ============================= -->
+<!-- FUTURE PAGES END -->
+<!-- ============================= -->
+
+<script>
+
+/* ============================= */
+/* FUTURE JAVASCRIPT START */
+/* ============================= */
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* GLOBAL SEARCH DATABASE */
+/* ===================================================== */
+
+const searchDatabase = [
+
+{
+title:"قرآن مجید",
+keywords:["قرآن","quran","surah","سورہ"],
+action:function(){
+alert("قرآن مجید Page");
+}
+},
+
+{
+title:"حدیث",
+keywords:["حدیث","hadith"],
+action:function(){
+alert("حدیث Page");
+}
+},
+{
+title:"دعائیں",
+keywords:["دعا","دعائیں","dua"],
+action:function(){
+alert("دعائیں Page");
+}
+},
+
+{
+title:"تسبیح",
+keywords:["تسبیح","ذکر","tasbeeh"],
+action:function(){
+alert("تسبیح Page");
+}
+},
+
+{
+title:"اوقات نماز",
+keywords:["نماز","prayer","salah"],
+action:function(){
+alert("اوقات نماز");
+}
+},
+
+{
+title:"قبلہ نما",
+keywords:["قبلہ","qibla"],
+action:function(){
+alert("قبلہ نما");
+}
+}
+
+];
+
+/* ===================================================== */
+/* SEARCH ENGINE */
+/* ===================================================== */
+
+function searchApp(){
+
+let input=document.getElementById("globalSearch").value.trim().toLowerCase();
+
+let results=document.getElementById("searchResults");
+
+results.innerHTML="";
+
+if(input==""){
+
+results.style.display="none";
+
+return;
+
+}
+
+let total=0;
+
+searchDatabase.forEach(function(item){
+
+let found=false;
+
+if(item.title.toLowerCase().includes(input)){
+
+found=true;
+
+}
+
+item.keywords.forEach(function(key){
+
+if(key.toLowerCase().includes(input)){
+
+found=true;
+
+}
+
+});
+
+if(found){
+
+total++;
+
+let div=document.createElement("div");
+
+div.className="searchItem";
+
+div.innerHTML=item.title;
+
+div.onclick=function(){
+
+results.style.display="none";
+
+document.getElementById("globalSearch").value="";
+
+item.action();
+
+};
+
+results.appendChild(div);
+
+}
+
+});
+
+if(total==0){
+
+results.innerHTML='<div class="noResult">No Results Found</div>';
+
+}
+
+results.style.display="block";
+
+}
+/* ============================= */
+/* HEADER JAVASCRIPT */
+/* ============================= */
+
+const hijriMonths = [
+"Muharram","Safar","Rabi al-Awwal","Rabi al-Thani",
+"Jumada al-Awwal","Jumada al-Thani","Rajab","Shaban",
+"Ramadan","Shawwal","Dhul Qadah","Dhul Hijjah"
+];
+
+const HIJRI_OFFSET_DAYS = -1;
+
+
+
+let imamIndex = 0;
+
+function getHijri(date){
+
+let d = new Date(date);
+
+d.setDate(d.getDate()+HIJRI_OFFSET_DAYS);
+
+let parts = new Intl.DateTimeFormat('en-TN-u-ca-islamic',{
+
+day:'numeric',
+
+month:'numeric',
+
+year:'numeric'
+
+}).formatToParts(d);
+
+let day = parts.find(x=>x.type==="day").value.padStart(2,'0');
+
+let month = parseInt(parts.find(x=>x.type==="month").value)-1;
+
+let year = parts.find(x=>x.type==="year").value;
+
+return `${day} ${hijriMonths[month]} ${year} Hijri`;
+
+}
+
+function updateClock(){
+
+let now = new Date();
+
+document.getElementById("time").innerHTML =
+now.toLocaleTimeString();
+
+document.getElementById("date").innerHTML =
+now.toLocaleDateString('en-US',{
+weekday:'long',
+day:'numeric',
+month:'long',
+year:'numeric'
+});
+
+document.getElementById("hijri").innerHTML =
+getHijri(now);
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+
+
+
+
+
+
+/* ============================= */
+/* PAGE NAVIGATION */
+/* ============================= */
+
+let pageHistory=[];
+
+function hidePages(){
+
+document.querySelectorAll(".page").forEach(function(page){
+
+page.style.display="none";
+
+});
+
+}
+
+function openPage(id){
+
+const visible=document.querySelector(".page[style*='block']");
+
+if(visible){
+
+pageHistory.push(visible.id);
+
+}
+
+hidePages();
+
+document.getElementById(id).style.display="block";
+
+history.pushState({page:id},"");
+
+window.scrollTo(0,0);
+
+}
+
+function goBack(){
+
+if(pageHistory.length>0){
+
+hidePages();
+
+let last=pageHistory.pop();
+
+document.getElementById(last).style.display="block";
+
+}else{
+
+hidePages();
+
+}
+
+}
+
+
+function openDua(id){
+
+    const dua = duas.find(item => item.id === id);
+
+    if(!dua){
+        alert("Dua not found");
+        return;
+    }
+
+    document.getElementById("duaTitle").textContent = dua.english;
+
+document.getElementById("duaBismillah").textContent = dua.bismillah;
+
+document.getElementById("duaArabic").innerHTML = dua.arabic;
+
+document.getElementById("duaTranslation").innerHTML = dua.translation;
+
+document.getElementById("duaReference").innerHTML = dua.reference;
+
+    openPage("duaDetailPage");
+
+}
+window.addEventListener("popstate",function(){
+
+goBack();
+
+});
+
+
+
+
+/* ===================================== */
+/* PREMIUM IMAM CARD START */
+/* ===================================== */
+
+const imamData = [
+
+{
+number:"01",
+name:"امام علی ابن ابی طالبؑ",
+years:"11 Hijri → 40 Hijri",
+duration:"29 Years of Imamat"
+},
+
+{
+number:"02",
+name:"امام حسن ابن علیؑ",
+years:"40 Hijri → 50 Hijri",
+duration:"10 Years of Imamat"
+},
+
+{
+number:"03",
+name:"امام حسین ابن علیؑ",
+years:"50 Hijri → 61 Hijri",
+duration:"11 Years of Imamat"
+},
+
+{
+number:"04",
+name:"امام علی ابن الحسین زین العابدینؑ",
+years:"61 Hijri → 95 Hijri",
+duration:"34 Years of Imamat"
+},
+
+{
+number:"05",
+name:"امام محمد ابن علی الباقرؑ",
+years:"95 Hijri → 114 Hijri",
+duration:"19 Years of Imamat"
+},
+
+{
+number:"06",
+name:"امام جعفر ابن محمد الصادقؑ",
+years:"114 Hijri → 148 Hijri",
+duration:"34 Years of Imamat"
+},
+
+{
+number:"07",
+name:"امام موسیٰ ابن جعفر الکاظمؑ",
+years:"148 Hijri → 183 Hijri",
+duration:"35 Years of Imamat"
+},
+
+{
+number:"08",
+name:"امام علی ابن موسیٰ الرضاؑ",
+years:"183 Hijri → 203 Hijri",
+duration:"20 Years of Imamat"
+},
+
+{
+number:"09",
+name:"امام محمد ابن علی التقیؑ",
+years:"203 Hijri → 220 Hijri",
+duration:"17 Years of Imamat"
+},
+
+{
+number:"10",
+name:"امام علی ابن محمد النقیؑ",
+years:"220 Hijri → 254 Hijri",
+duration:"34 Years of Imamat"
+},
+
+{
+number:"11",
+name:"امام حسن ابن علی العسکریؑ",
+years:"254 Hijri → 260 Hijri",
+duration:"6 Years of Imamat"
+},
+
+{
+number:"12",
+name:"امام محمد ابن حسن المہدیؑ",
+years:"260 Hijri → Present",
+duration:"Present Imam"
+}
+
+];
+
+let imamCurrent=0;
+
+function updateImamCard(){
+
+document.getElementById("imamNumber").innerHTML=
+imamData[imamCurrent].number;
+
+document.getElementById("imamName").innerHTML=
+imamData[imamCurrent].name;
+
+document.getElementById("imamYears").innerHTML=
+imamData[imamCurrent].years;
+
+document.getElementById("imamDuration").innerHTML=
+imamData[imamCurrent].duration;
+
+imamCurrent++;
+
+if(imamCurrent>=imamData.length){
+
+imamCurrent=0;
+
+}
+
+}
+
+updateImamCard();
+
+setInterval(updateImamCard,3000);
+
+document.querySelectorAll(".homeCard").forEach(function(card){
+
+card.addEventListener("touchstart",function(){
+
+card.classList.add("pressEffect");
+
+});
+
+card.addEventListener("touchend",function(){
+
+setTimeout(function(){
+
+card.classList.remove("pressEffect");
+
+},120);
+
+});
+
+card.addEventListener("touchcancel",function(){
+
+card.classList.remove("pressEffect");
+
+});
+
+});
+
+/*====================================
+        TASBEEH COUNTER
+====================================*/
+
+let tasbeehMode = "zehra";
+let tasbeehStep = 0;
+
+const tasbeehNames = [
+
+"اللّٰهُ أَكْبَرُ",
+
+"الْحَمْدُ لِلّٰهِ",
+
+"سُبْحَانَ اللّٰهِ"
+
+];
+
+const tasbeehLimits = [
+
+35,
+
+34,
+
+34
+
+];
+const zehraTab = document.getElementById("zehraTab");
+const unlimitedTab = document.getElementById("unlimitedTab");
+
+if(zehraTab){
+
+    zehraTab.onclick = function(){
+
+        tasbeehMode = "zehra";
+
+        zehraTab.classList.add("active");
+        unlimitedTab.classList.remove("active");
+
+    }
+
+}
+
+if(unlimitedTab){
+
+    unlimitedTab.onclick = function(){
+
+        tasbeehMode = "unlimited";
+
+        unlimitedTab.classList.add("active");
+        zehraTab.classList.remove("active");
+
+    }
+
+}
+
+let tasbeehCount = 0;
+
+const circle = document.getElementById("tasbeehCircle");
+
+const countText = document.getElementById("tasbeehCount");
+
+const zikrText = document.getElementById("tasbeehZikr");
+const resetBtn = document.getElementById("resetBtn");
+const minusBtn = document.getElementById("minusBtn");
+if(circle){
+
+circle.onclick=function(){
+
+if(tasbeehMode=="unlimited"){
+
+tasbeehCount++;
+
+countText.textContent=tasbeehCount;
+
+return;
+
+}
+
+tasbeehCount++;
+
+countText.textContent=tasbeehCount;
+if(tasbeehCount >= tasbeehLimits[tasbeehStep]){
+
+tasbeehStep++;
+
+tasbeehCount = 0;
+
+if(tasbeehStep > 2){
+
+tasbeehStep = 0;
+
+}
+
+countText.textContent = 0;
+
+zikrText.textContent = tasbeehNames[tasbeehStep];
+
+}
+}
+
+}
+
+if(resetBtn){
+
+resetBtn.onclick=function(){
+
+tasbeehCount=0;
+
+tasbeehStep=0;
+
+countText.textContent=0;
+
+zikrText.textContent="اللّٰهُ أَكْبَرُ";
+
+}
+
+}
+if(minusBtn){
+
+minusBtn.onclick=function(){
+
+if(tasbeehCount>0){
+
+tasbeehCount--;
+
+countText.textContent=tasbeehCount;
+
+}
+
+}
+
+}
+
+function toggleReference(element){
+
+const content = element.nextElementSibling;
+
+const arrow = element.querySelector(".referenceArrow");
+
+if(content.style.display=="block"){
+
+content.style.display="none";
+
+arrow.textContent="▼";
+
+}else{
+
+content.style.display="block";
+
+arrow.textContent="▲";
+
+}
+
+}
+
+
+
+
+/*==================================
+        DUA PAGE SEARCH
+==================================*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchInput = document.getElementById("duaSearchInput");
+
+    if (!searchInput) return;
+
+    // Dua page ke saare buttons ko searchable bana do
+    const duaButtons = document.querySelectorAll("#duaPage .listButton");
+
+    duaButtons.forEach(function(button){
+        button.classList.add("duaItem");
+    });
+
+    // Live Search
+    searchInput.addEventListener("input", function () {
+
+        const keyword = this.value.trim().toLowerCase();
+
+        duaButtons.forEach(function(button){
+
+            const text = button.innerText.toLowerCase();
+
+            if(text.indexOf(keyword) > -1){
+
+                button.style.display = "flex";
+
+            }else{
+
+                button.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/*==================================
+        ASMA DATA
+==================================*/
+
+
+/* ---------- ALLAH ---------- */
+
+const allahNames = [
+
+{
+arabic:"ٱللَّٰهُ",
+urdu:"    اللّٰه    "
+},
+
+{
+arabic:"ٱلرَّحْمَٰنُ",
+urdu:"نہایت مہربان"
+},
+
+{
+arabic:"ٱلرَّحِيمُ",
+urdu:"ہمیشہ رحم فرمانے والا"
+},
+
+{
+arabic:"ٱلْمَلِكُ",
+urdu:"حقیقی بادشاہ"
+},
+
+{
+arabic:"ٱلْقُدُّوسُ",
+urdu:"ہر عیب سے پاک"
+},
+
+{
+arabic:"ٱلسَّلَامُ",
+urdu:"سلامتی دینے والا"
+},
+
+{
+arabic:"ٱلْمُؤْمِنُ",
+urdu:"امن عطا فرمانے والا"
+},
+
+{
+arabic:"ٱلْمُهَيْمِنُ",
+urdu:"نگہبان"
+},
+
+{
+arabic:"ٱلْعَزِيزُ",
+urdu:"غالب"
+},
+
+{
+arabic:"ٱلْجَبَّارُ",
+urdu:"زبردست قدرت والا"
+},
+
+{
+arabic:"ٱلْمُتَكَبِّرُ",
+urdu:"بزرگی والا"
+},
+
+{
+arabic:"ٱلْخَالِقُ",
+urdu:"پیدا کرنے والا"
+},
+
+{
+arabic:"ٱلْبَارِئُ",
+urdu:"عدم سے وجود دینے والا"
+},
+
+{
+arabic:"ٱلْمُصَوِّرُ",
+urdu:"صورت بنانے والا"
+},
+
+{
+arabic:"ٱلْغَفَّارُ",
+urdu:"بہت بخشنے والا"
+},
+
+{
+arabic:"ٱلْقَهَّارُ",
+urdu:"سب پر غالب"
+},
+
+{
+arabic:"ٱلْوَهَّابُ",
+urdu:"بہت عطا فرمانے والا"
+},
+
+{
+arabic:"ٱلرَّزَّاقُ",
+urdu:"رزق دینے والا"
+},
+
+{
+arabic:"ٱلْفَتَّاحُ",
+urdu:"کھولنے والا"
+},
+
+{
+arabic:"ٱلْعَلِيمُ",
+urdu:"سب کچھ جاننے والا"
+},
+
+{
+arabic:"ٱلْقَابِضُ",
+urdu:"روکنے والا"
+},
+
+{
+arabic:"ٱلْبَاسِطُ",
+urdu:"کشادگی دینے والا"
+},
+
+{
+arabic:"ٱلْخَافِضُ",
+urdu:"پست کرنے والا"
+},
+
+{
+arabic:"ٱلرَّافِعُ",
+urdu:"بلند کرنے والا"
+},
+
+{
+arabic:"ٱلْمُعِزُ",
+urdu:"عزت دینے والا"
+},
+{
+arabic:"ٱلْمُذِلُّ",
+urdu:"ذلت دینے والا"
+},
+
+{
+arabic:"ٱلسَّمِيعُ",
+urdu:"ہر چیز سننے والا"
+},
+
+{
+arabic:"ٱلْبَصِيرُ",
+urdu:"ہر چیز دیکھنے والا"
+},
+
+{
+arabic:"ٱلْحَكَمُ",
+urdu:"فیصلہ فرمانے والا"
+},
+
+{
+arabic:"ٱلْعَدْلُ",
+urdu:"کامل انصاف کرنے والا"
+},
+
+{
+arabic:"ٱللَّطِيفُ",
+urdu:"بہت مہربانی کرنے والا"
+},
+
+{
+arabic:"ٱلْخَبِيرُ",
+urdu:"ہر چیز سے باخبر"
+},
+
+{
+arabic:"ٱلْحَلِيمُ",
+urdu:"بردبار"
+},
+
+{
+arabic:"ٱلْعَظِيمُ",
+urdu:"عظمت والا"
+},
+
+{
+arabic:"ٱلْغَفُورُ",
+urdu:"بہت بخشنے والا"
+},
+
+{
+arabic:"ٱلشَّكُورُ",
+urdu:"قدردان"
+},
+
+{
+arabic:"ٱلْعَلِيُّ",
+urdu:"سب سے بلند"
+},
+
+{
+arabic:"ٱلْكَبِيرُ",
+urdu:"بہت بڑا"
+},
+
+{
+arabic:"ٱلْحَفِيظُ",
+urdu:"حفاظت کرنے والا"
+},
+
+{
+arabic:"ٱلْمُقِيتُ",
+urdu:"روزی اور قوت دینے والا"
+},
+
+{
+arabic:"ٱلْحَسِيبُ",
+urdu:"حساب لینے والا"
+},
+
+{
+arabic:"ٱلْجَلِيلُ",
+urdu:"بزرگی والا"
+},
+
+{
+arabic:"ٱلْكَرِيمُ",
+urdu:"بہت کرم کرنے والا"
+},
+
+{
+arabic:"ٱلرَّقِيبُ",
+urdu:"نگرانی کرنے والا"
+},
+
+{
+arabic:"ٱلْمُجِيبُ",
+urdu:"دعا قبول کرنے والا"
+},
+
+{
+arabic:"ٱلْوَاسِعُ",
+urdu:"وسیع رحمت والا"
+},
+
+{
+arabic:"ٱلْحَكِيمُ",
+urdu:"حکمت والا"
+},
+
+{
+arabic:"ٱلْوَدُودُ",
+urdu:"محبت کرنے والا"
+},
+
+{
+arabic:"ٱلْمَجِيدُ",
+urdu:"بزرگی اور عزت والا"
+},
+
+{
+arabic:"ٱلْبَاعِثُ",
+urdu:"دوبارہ زندہ کرنے والا"
+},
+{
+arabic:"ٱلشَّهِيدُ",
+urdu:"ہر چیز پر گواہ"
+},
+
+{
+arabic:"ٱلْحَقُّ",
+urdu:"برحق"
+},
+
+{
+arabic:"ٱلْوَكِيلُ",
+urdu:"کارساز"
+},
+
+{
+arabic:"ٱلْقَوِيُّ",
+urdu:"بہت قوت والا"
+},
+
+{
+arabic:"ٱلْمَتِينُ",
+urdu:"نہایت مضبوط"
+},
+
+{
+arabic:"ٱلْوَلِيُّ",
+urdu:"حمایت کرنے والا"
+},
+
+{
+arabic:"ٱلْحَمِيدُ",
+urdu:"ہر تعریف کے لائق"
+},
+
+{
+arabic:"ٱلْمُحْصِي",
+urdu:"ہر چیز کا شمار رکھنے والا"
+},
+
+{
+arabic:"ٱلْمُبْدِئُ",
+urdu:"پہلی بار پیدا کرنے والا"
+},
+
+{
+arabic:"ٱلْمُعِيدُ",
+urdu:"دوبارہ پیدا کرنے والا"
+},
+
+{
+arabic:"ٱلْمُحْيِي",
+urdu:"زندگی دینے والا"
+},
+
+{
+arabic:"ٱلْمُمِيتُ",
+urdu:"موت دینے والا"
+},
+
+{
+arabic:"ٱلْحَيُّ",
+urdu:"ہمیشہ زندہ رہنے والا"
+},
+
+{
+arabic:"ٱلْقَيُّومُ",
+urdu:"سب کو قائم رکھنے والا"
+},
+
+{
+arabic:"ٱلْوَاجِدُ",
+urdu:"سب کچھ پانے والا"
+},
+
+{
+arabic:"ٱلْمَاجِدُ",
+urdu:"بزرگی والا"
+},
+
+{
+arabic:"ٱلْوَاحِدُ",
+urdu:"ایک"
+},
+
+{
+arabic:"ٱلْأَحَدُ",
+urdu:"یکتا"
+},
+
+{
+arabic:"ٱلصَّمَدُ",
+urdu:"بےنیاز"
+},
+
+{
+arabic:"ٱلْقَادِرُ",
+urdu:"ہر چیز پر قدرت رکھنے والا"
+},
+
+{
+arabic:"ٱلْمُقْتَدِرُ",
+urdu:"کامل قدرت والا"
+},
+
+{
+arabic:"ٱلْمُقَدِّمُ",
+urdu:"آگے کرنے والا"
+},
+
+{
+arabic:"ٱلْمُؤَخِّرُ",
+urdu:"پیچھے کرنے والا"
+},
+
+{
+arabic:"ٱلْأَوَّلُ",
+urdu:"سب سے پہلے"
+},
+
+{
+arabic:"ٱلْآخِرُ",
+urdu:"سب سے آخر"
+},
+{
+arabic:"ٱلظَّاهِرُ",
+urdu:"سب پر ظاہر"
+},
+
+{
+arabic:"ٱلْبَاطِنُ",
+urdu:"ہر چیز کی حقیقت جاننے والا"
+},
+
+{
+arabic:"ٱلْوَالِي",
+urdu:"تمام امور کا مالک و نگران"
+},
+
+{
+arabic:"ٱلْمُتَعَالِي",
+urdu:"سب سے بلند و برتر"
+},
+
+{
+arabic:"ٱلْبَرُّ",
+urdu:"بہت احسان کرنے والا"
+},
+
+{
+arabic:"ٱلتَّوَّابُ",
+urdu:"توبہ قبول کرنے والا"
+},
+
+{
+arabic:"ٱلْمُنْتَقِمُ",
+urdu:"انصاف کے ساتھ بدلہ لینے والا"
+},
+
+{
+arabic:"ٱلْعَفُوُّ",
+urdu:"بہت معاف کرنے والا"
+},
+
+{
+arabic:"ٱلرَّؤُوفُ",
+urdu:"نہایت شفقت فرمانے والا"
+},
+
+{
+arabic:"مَالِكُ ٱلْمُلْكِ",
+urdu:"تمام بادشاہی کا مالک"
+},
+
+{
+arabic:"ذُو ٱلْجَلَالِ وَٱلْإِكْرَامِ",
+urdu:"جلال اور بزرگی والا"
+},
+
+{
+arabic:"ٱلْمُقْسِطُ",
+urdu:"انصاف کرنے والا"
+},
+
+{
+arabic:"ٱلْجَامِعُ",
+urdu:"سب کو جمع کرنے والا"
+},
+
+{
+arabic:"ٱلْغَنِيُّ",
+urdu:"بےنیاز"
+},
+
+{
+arabic:"ٱلْمُغْنِي",
+urdu:"بےنیاز کرنے والا"
+},
+
+{
+arabic:"ٱلْمَانِعُ",
+urdu:"روکنے والا"
+},
+
+{
+arabic:"ٱلضَّارُّ",
+urdu:"ضرر پہنچانے کی قدرت رکھنے والا"
+},
+
+{
+arabic:"ٱلنَّافِعُ",
+urdu:"نفع پہنچانے والا"
+},
+
+{
+arabic:"ٱلنُّورُ",
+urdu:"نور دینے والا"
+},
+
+{
+arabic:"ٱلْهَادِي",
+urdu:"ہدایت دینے والا"
+},
+
+{
+arabic:"ٱلْبَدِيعُ",
+urdu:"بے مثال پیدا کرنے والا"
+},
+
+{
+arabic:"ٱلْبَاقِي",
+urdu:"ہمیشہ باقی رہنے والا"
+},
+
+{
+arabic:"ٱلْوَارِثُ",
+urdu:"سب کا حقیقی وارث"
+},
+
+{
+arabic:"ٱلرَّشِيدُ",
+urdu:"درست راہ دکھانے والا"
+},
+
+{
+arabic:"ٱلصَّبُورُ",
+urdu:"بہت صبر کرنے والا"
+}
+];
+
+
+
+/* ---------- MUHAMMAD ﷺ ---------- */
+
+const muhammadNames = [
+
+{
+arabic:"مُحَمَّدٌ ﷺ",
+urdu:"بہت زیادہ تعریف کیے گئے"
+},
+
+{
+arabic:"أَحْمَدُ ﷺ",
+urdu:"سب سے زیادہ حمد کیے گئے"
+},
+
+{
+arabic:"الْمَاحِي ﷺ",
+urdu:"کفر کو مٹانے والے"
+},
+
+{
+arabic:"الْحَاشِرُ ﷺ",
+urdu:"جن کے بعد لوگوں کا حشر ہوگا"
+},
+
+{
+arabic:"الْعَاقِبُ ﷺ",
+urdu:"آخری نبی"
+},
+
+{
+arabic:"نَبِيُّ اللّٰهِ ﷺ",
+urdu:"اللہ کے نبی"
+},
+
+{
+arabic:"رَسُولُ اللّٰهِ ﷺ",
+urdu:"اللہ کے رسول"
+},
+
+{
+arabic:"خَاتَمُ النَّبِيِّينَ ﷺ",
+urdu:"تمام نبیوں کے خاتم"
+},
+
+{
+arabic:"رَحْمَةً لِّلْعَالَمِينَ ﷺ",
+urdu:"تمام جہانوں کے لیے رحمت"
+},
+
+{
+arabic:"السِّرَاجُ الْمُنِيرُ ﷺ",
+urdu:"روشن چراغ"
+},
+
+{
+arabic:"الشَّاهِدُ ﷺ",
+urdu:"گواہ"
+},
+
+{
+arabic:"الْمُبَشِّرُ ﷺ",
+urdu:"خوشخبری دینے والے"
+},
+
+{
+arabic:"النَّذِيرُ ﷺ",
+urdu:"خبردار کرنے والے"
+},
+
+{
+arabic:"الدَّاعِي إِلَى اللّٰهِ ﷺ",
+urdu:"اللہ کی طرف بلانے والے"
+},
+
+{
+arabic:"الْمُصْطَفَى ﷺ",
+urdu:"چنے ہوئے"
+},
+
+{
+arabic:"الْمُجْتَبَى ﷺ",
+urdu:"منتخب کیے گئے"
+},
+
+{
+arabic:"الْأَمِينُ ﷺ",
+urdu:"امانت دار"
+},
+
+{
+arabic:"الصَّادِقُ ﷺ",
+urdu:"سچے"
+},
+
+{
+arabic:"طٰهٰ ﷺ",
+urdu:"قرآنی لقب"
+},
+
+{
+arabic:"يٰسٓ ﷺ",
+urdu:"قرآنی لقب"
+},
+
+{
+arabic:"الْمُزَّمِّلُ ﷺ",
+urdu:"چادر اوڑھنے والے"
+},
+
+{
+arabic:"الْمُدَّثِّرُ ﷺ",
+urdu:"لبادہ اوڑھنے والے"
+},
+
+{
+arabic:"عَبْدُ اللّٰهِ ﷺ",
+urdu:"اللہ کے بندے"
+},
+
+{
+arabic:"الْكَرِيمُ ﷺ",
+urdu:"نہایت کریم"
+},
+
+{
+arabic:"الْحَبِيبُ ﷺ",
+urdu:"اللہ کے محبوب"
+},
+{
+arabic:"سَيِّدُ الْمُرْسَلِينَ ﷺ",
+urdu:"تمام رسولوں کے سردار"
+},
+
+{
+arabic:"سَيِّدُ الْأَنْبِيَاءِ ﷺ",
+urdu:"تمام انبیاء کے سردار"
+},
+
+{
+arabic:"إِمَامُ الْمُتَّقِينَ ﷺ",
+urdu:"پرہیزگاروں کے امام"
+},
+
+{
+arabic:"إِمَامُ الْمُرْسَلِينَ ﷺ",
+urdu:"رسولوں کے امام"
+},
+
+{
+arabic:"خَيْرُ الْخَلْقِ ﷺ",
+urdu:"تمام مخلوق میں سب سے بہتر"
+},
+
+{
+arabic:"خَيْرُ الْبَرِيَّةِ ﷺ",
+urdu:"تمام مخلوق میں بہترین"
+},
+
+{
+arabic:"خَيْرُ النَّاسِ ﷺ",
+urdu:"تمام انسانوں میں بہترین"
+},
+
+{
+arabic:"نَبِيُّ الرَّحْمَةِ ﷺ",
+urdu:"رحمت والے نبی"
+},
+
+{
+arabic:"نَبِيُّ التَّوْبَةِ ﷺ",
+urdu:"توبہ کے نبی"
+},
+
+{
+arabic:"نَبِيُّ الْمَلْحَمَةِ ﷺ",
+urdu:"حق کی جنگوں کے نبی"
+},
+
+{
+arabic:"رَؤُوفٌ ﷺ",
+urdu:"نہایت شفقت فرمانے والے"
+},
+
+{
+arabic:"رَحِيمٌ ﷺ",
+urdu:"بہت رحم فرمانے والے"
+},
+
+{
+arabic:"الْمُتَوَكِّلُ ﷺ",
+urdu:"اللہ پر کامل بھروسہ کرنے والے"
+},
+
+{
+arabic:"الْمُقَفِّي ﷺ",
+urdu:"پہلے انبیاء کے بعد آنے والے"
+},
+
+{
+arabic:"الضَّحُوكُ ﷺ",
+urdu:"تبسم فرمانے والے"
+},
+
+{
+arabic:"الْبَشُوشُ ﷺ",
+urdu:"خوش اخلاق اور خندہ پیشانی والے"
+},
+
+{
+arabic:"الشَّفِيعُ ﷺ",
+urdu:"شفاعت کرنے والے"
+},
+
+{
+arabic:"صَاحِبُ الْمَقَامِ الْمَحْمُودِ ﷺ",
+urdu:"مقامِ محمود والے"
+},
+
+{
+arabic:"صَاحِبُ الْحَوْضِ ﷺ",
+urdu:"حوضِ کوثر والے"
+},
+
+{
+arabic:"صَاحِبُ اللِّوَاءِ ﷺ",
+urdu:"پرچمِ حمد والے"
+},
+
+{
+arabic:"الْمُخْتَارُ ﷺ",
+urdu:"منتخب کیے گئے"
+},
+
+{
+arabic:"الْمُجَاهِدُ ﷺ",
+urdu:"اللہ کی راہ میں جہاد کرنے والے"
+},
+
+{
+arabic:"الْمُعَلِّمُ ﷺ",
+urdu:"سب سے عظیم معلم"
+},
+
+{
+arabic:"الْمُزَكِّي ﷺ",
+urdu:"پاکیزگی سکھانے والے"
+},
+
+{
+arabic:"سَيِّدُ وَلَدِ آدَمَ ﷺ",
+urdu:"اولادِ آدم کے سردار"
+},
+{
+arabic:"سَيِّدُ الْكَوْنَيْنِ ﷺ",
+urdu:"دونوں جہانوں کے سردار"
+},
+
+{
+arabic:"سَيِّدُ الثَّقَلَيْنِ ﷺ",
+urdu:"جنّ و انس کے سردار"
+},
+
+{
+arabic:"سَيِّدُ الْعَرَبِ ﷺ",
+urdu:"عرب کے سردار"
+},
+
+{
+arabic:"الْهَادِي ﷺ",
+urdu:"ہدایت دینے والے"
+},
+
+{
+arabic:"الْمَهْدِيُّ ﷺ",
+urdu:"ہدایت یافتہ"
+},
+
+{
+arabic:"النُّورُ ﷺ",
+urdu:"نورِ ہدایت"
+},
+
+{
+arabic:"السِّرَاجُ ﷺ",
+urdu:"چراغ"
+},
+
+{
+arabic:"الْمُنِيرُ ﷺ",
+urdu:"روشن کرنے والے"
+},
+
+{
+arabic:"الطَّاهِرُ ﷺ",
+urdu:"پاکیزہ"
+},
+
+{
+arabic:"الطَّيِّبُ ﷺ",
+urdu:"نہایت پاک"
+},
+
+{
+arabic:"الزَّكِيُّ ﷺ",
+urdu:"انتہائی پاکیزہ"
+},
+
+{
+arabic:"الْبَرُّ ﷺ",
+urdu:"احسان کرنے والے"
+},
+
+{
+arabic:"الْكَرِيمُ ﷺ",
+urdu:"بہت کریم"
+},
+
+{
+arabic:"الْجَوَادُ ﷺ",
+urdu:"بہت سخی"
+},
+
+{
+arabic:"الْحَلِيمُ ﷺ",
+urdu:"بردبار"
+},
+
+{
+arabic:"الْعَفُوُّ ﷺ",
+urdu:"درگزر فرمانے والے"
+},
+
+{
+arabic:"الصَّبُورُ ﷺ",
+urdu:"بہت صبر کرنے والے"
+},
+
+{
+arabic:"الْأَمِينُ ﷺ",
+urdu:"امانت دار"
+},
+
+{
+arabic:"الصَّادِقُ الْأَمِينُ ﷺ",
+urdu:"سچے اور امانت دار"
+},
+
+{
+arabic:"الْمُبِينُ ﷺ",
+urdu:"واضح حق بیان کرنے والے"
+},
+
+{
+arabic:"الْمُبَلِّغُ ﷺ",
+urdu:"اللہ کا پیغام پہنچانے والے"
+},
+
+{
+arabic:"الْمُذَكِّرُ ﷺ",
+urdu:"نصیحت کرنے والے"
+},
+
+{
+arabic:"الْمُرْشِدُ ﷺ",
+urdu:"درست راستہ دکھانے والے"
+},
+
+{
+arabic:"الْمُؤَيَّدُ ﷺ",
+urdu:"اللہ کی مدد سے مؤید"
+},
+
+{
+arabic:"الْمُكَرَّمُ ﷺ",
+urdu:"بہت عزت والے"
+},
+];
+
+const fatimaNames = [
+
+{
+arabic:"فَاطِمَةُ الزَّهْرَاءِ ؑ",
+urdu:"حضرت فاطمہ زہراءؑ"
+},
+
+{
+arabic:"الزَّهْرَاءُ ؑ",
+urdu:"روشن و منور"
+},
+
+{
+arabic:"الصِّدِّيقَةُ ؑ",
+urdu:"بہت سچی"
+},
+
+{
+arabic:"الطَّاهِرَةُ ؑ",
+urdu:"پاکیزہ"
+},
+
+{
+arabic:"الْمُبَارَكَةُ ؑ",
+urdu:"باعثِ برکت"
+},
+
+{
+arabic:"الزَّكِيَّةُ ؑ",
+urdu:"پاک و پاکیزہ"
+},
+
+{
+arabic:"الرَّاضِيَةُ ؑ",
+urdu:"اللہ کی رضا پر راضی"
+},
+
+{
+arabic:"الْمَرْضِيَّةُ ؑ",
+urdu:"جس سے اللہ راضی"
+},
+
+{
+arabic:"الْمُحَدَّثَةُ ؑ",
+urdu:"فرشتوں سے گفتگو کرنے والی"
+},
+
+{
+arabic:"الْبَتُولُ ؑ",
+urdu:"دنیا سے بے رغبت"
+},
+
+{
+arabic:"السَّيِّدَةُ ؑ",
+urdu:"خاتونِ عظمت"
+},
+
+{
+arabic:"سَيِّدَةُ نِسَاءِ الْعَالَمِينَ ؑ",
+urdu:"تمام جہانوں کی خواتین کی سردار"
+},
+
+{
+arabic:"أُمُّ أَبِيهَا ؑ",
+urdu:"اپنے والد کی ماں"
+},
+
+{
+arabic:"الْحَوْرَاءُ الْإِنْسِيَّةُ ؑ",
+urdu:"انسانی صورت میں حور"
+},
+
+{
+arabic:"الْعَذْرَاءُ ؑ",
+urdu:"پاک دامن"
+},
+
+{
+arabic:"الْمَنْصُورَةُ ؑ",
+urdu:"اللہ کی مدد یافتہ"
+},
+
+{
+arabic:"النَّقِيَّةُ ؑ",
+urdu:"ہر عیب سے پاک"
+},
+
+{
+arabic:"الرَّشِيدَةُ ؑ",
+urdu:"ہدایت یافتہ"
+},
+
+{
+arabic:"الْمَرْحُومَةُ ؑ",
+urdu:"رحمت والی"
+},
+
+{
+arabic:"الْكَرِيمَةُ ؑ",
+urdu:"سخی و کریم"
+},
+
+{
+arabic:"أُمُّ الْحَسَنَيْنِ ؑ",
+urdu:"امام حسنؑ و امام حسینؑ کی والدہ"
+},
+
+{
+arabic:"أُمُّ الْأَئِمَّةِ ؑ",
+urdu:"ائمہؑ کی مادر"
+},
+
+{
+arabic:"بِضْعَةُ الرَّسُولِ ﷺ",
+urdu:"رسول ﷺ کا حصہ"
+},
+
+{
+arabic:"قُرَّةُ عَيْنِ الرَّسُولِ ﷺ",
+urdu:"رسول ﷺ کی آنکھوں کی ٹھنڈک"
+},
+
+{
+arabic:"الْمَظْلُومَةُ ؑ",
+urdu:"مظلومہ"
+},
+{
+arabic:"أُمُّ الْحَسَنِ ؑ",
+urdu:"امام حسنؑ کی والدہ"
+},
+
+{
+arabic:"أُمُّ الْحُسَيْنِ ؑ",
+urdu:"امام حسینؑ کی والدہ"
+},
+
+{
+arabic:"عَقِيلَةُ النِّسَاءِ ؑ",
+urdu:"خواتین کی دانا و معزز ہستی"
+},
+
+{
+arabic:"سَيِّدَةُ الْبَيْتِ ؑ",
+urdu:"اہلِ بیتؑ کی عظیم خاتون"
+},
+
+{
+arabic:"رَيْحَانَةُ الرَّسُولِ ﷺ",
+urdu:"رسول ﷺ کی خوشبو"
+},
+
+{
+arabic:"حَبِيبَةُ الرَّسُولِ ﷺ",
+urdu:"رسول ﷺ کی محبوب بیٹی"
+},
+
+{
+arabic:"نُورُ الْعَيْنِ ؑ",
+urdu:"آنکھوں کا نور"
+},
+
+{
+arabic:"ثَمَرَةُ الْفُؤَادِ ؑ",
+urdu:"دل کا پھل"
+},
+
+{
+arabic:"خَيْرُ النِّسَاءِ ؑ",
+urdu:"تمام خواتین میں بہترین"
+},
+
+{
+arabic:"إِمَامَةُ النِّسَاءِ ؑ",
+urdu:"خواتین کی پیشوا"
+},
+
+{
+arabic:"صَاحِبَةُ الْفَضَائِلِ ؑ",
+urdu:"فضائل والی"
+},
+
+{
+arabic:"مَعْدِنُ الطَّهَارَةِ ؑ",
+urdu:"پاکیزگی کا سرچشمہ"
+},
+
+{
+arabic:"مَنْبَعُ الْعِفَّةِ ؑ",
+urdu:"عفت کا سرچشمہ"
+},
+
+{
+arabic:"مِصْبَاحُ الْهُدَى ؑ",
+urdu:"ہدایت کا چراغ"
+},
+
+{
+arabic:"بَحْرُ الْفَضْلِ ؑ",
+urdu:"فضل کا سمندر"
+},
+
+{
+arabic:"عَيْنُ الرَّحْمَةِ ؑ",
+urdu:"رحمت کا سرچشمہ"
+},
+
+{
+arabic:"وَرِيثَةُ النُّبُوَّةِ ؑ",
+urdu:"نبوت کی وارث"
+},
+
+{
+arabic:"قُدْوَةُ الْمُؤْمِنَاتِ ؑ",
+urdu:"مومن خواتین کے لیے نمونہ"
+},
+
+{
+arabic:"أَسْوَةُ الْمُتَّقِينَ ؑ",
+urdu:"پرہیزگاروں کے لیے نمونہ"
+},
+
+{
+arabic:"صَاحِبَةُ الْمِحْرَابِ ؑ",
+urdu:"عبادت گزار خاتون"
+},
+
+{
+arabic:"صَاحِبَةُ الدُّعَاءِ ؑ",
+urdu:"دعاؤں والی"
+},
+
+{
+arabic:"صَاحِبَةُ الصَّبْرِ ؑ",
+urdu:"صبر والی"
+},
+
+{
+arabic:"صَاحِبَةُ الْكَرَامَةِ ؑ",
+urdu:"عظمت و کرامت والی"
+},
+
+{
+arabic:"شَفِيعَةُ الْمُؤْمِنِينَ ؑ",
+urdu:"مؤمنوں کی شفاعت کرنے والی"
+},
+
+{
+arabic:"سِرَاجُ أَهْلِ الْبَيْتِ ؑ",
+urdu:"اہلِ بیتؑ کا چراغ"
+}
+];
+
+
+
+/* ---------- ALI علیہ السلام ---------- */
+
+
+const aliNames = [
+
+{
+arabic:"عَلِيٌّ ؑ",
+urdu:"بلند مرتبہ"
+},
+
+{
+arabic:"أَمِيرُ الْمُؤْمِنِينَ ؑ",
+urdu:"مؤمنوں کے امیر"
+},
+
+{
+arabic:"الْمُرْتَضَىٰ ؑ",
+urdu:"اللہ کے پسندیدہ"
+},
+
+{
+arabic:"أَسَدُ اللّٰهِ ؑ",
+urdu:"اللہ کا شیر"
+},
+
+{
+arabic:"حَيْدَرٌ ؑ",
+urdu:"شیر"
+},
+
+{
+arabic:"يَعْسُوبُ الدِّينِ ؑ",
+urdu:"دین کے پیشوا"
+},
+
+{
+arabic:"يَعْسُوبُ الْمُؤْمِنِينَ ؑ",
+urdu:"مؤمنوں کے پیشوا"
+},
+
+{
+arabic:"إِمَامُ الْمُتَّقِينَ ؑ",
+urdu:"پرہیزگاروں کے امام"
+},
+
+{
+arabic:"سَيِّدُ الْوَصِيِّينَ ؑ",
+urdu:"تمام اوصیاء کے سردار"
+},
+
+{
+arabic:"وَصِيُّ رَسُولِ اللّٰهِ ؑ",
+urdu:"رسول اللہ ﷺ کے وصی"
+},
+
+{
+arabic:"أَبُو تُرَابٍ ؑ",
+urdu:"ابو تراب"
+},
+
+{
+arabic:"قَسِيمُ الْجَنَّةِ وَالنَّارِ ؑ",
+urdu:"جنت و جہنم تقسیم کرنے والے"
+},
+
+{
+arabic:"إِمَامُ الْعَارِفِينَ ؑ",
+urdu:"عارفین کے امام"
+},
+
+{
+arabic:"بَابُ مَدِينَةِ الْعِلْمِ ؑ",
+urdu:"شہرِ علم کا دروازہ"
+},
+
+{
+arabic:"أَبُو الْحَسَنِ ؑ",
+urdu:"ابوالحسن"
+},
+
+{
+arabic:"أَبُو السِّبْطَيْنِ ؑ",
+urdu:"دو سبطوں کے والد"
+},
+
+{
+arabic:"كَرَّارٌ ؑ",
+urdu:"بار بار حملہ کرنے والے"
+},
+
+{
+arabic:"سَيْفُ اللّٰهِ ؑ",
+urdu:"اللہ کی تلوار"
+},
+
+{
+arabic:"الْغَالِبُ ؑ",
+urdu:"غالب آنے والے"
+},
+
+{
+arabic:"الْفَاتِحُ ؑ",
+urdu:"فتح عطا کرنے والے"
+},
+{
+arabic:"صَاحِبُ ذُو الْفَقَارِ ؑ",
+urdu:"ذوالفقار کے حامل"
+},
+
+{
+arabic:"أَخُو رَسُولِ اللّٰهِ ﷺ",
+urdu:"رسول اللہ ﷺ کے بھائی"
+},
+
+{
+arabic:"إِمَامُ الْمُؤْمِنِينَ ؑ",
+urdu:"مؤمنوں کے امام"
+},
+
+{
+arabic:"سَيِّدُ الْعَرَبِ ؑ",
+urdu:"عرب کے سردار"
+},
+
+{
+arabic:"عَلَمُ الْهُدَىٰ ؑ",
+urdu:"ہدایت کا پرچم"
+},
+
+{
+arabic:"نُورُ اللّٰهِ ؑ",
+urdu:"اللہ کا نور"
+},
+
+{
+arabic:"حُجَّةُ اللّٰهِ ؑ",
+urdu:"اللہ کی حجت"
+},
+
+{
+arabic:"وَلِيُّ اللّٰهِ ؑ",
+urdu:"اللہ کے ولی"
+},
+
+{
+arabic:"خَلِيفَةُ رَسُولِ اللّٰهِ ﷺ",
+urdu:"رسول اللہ ﷺ کے جانشین"
+},
+
+{
+arabic:"إِمَامُ الْبَلَغَاءِ ؑ",
+urdu:"فصاحت کے امام"
+},
+
+{
+arabic:"إِمَامُ الْحُكَمَاءِ ؑ",
+urdu:"حکمت کے امام"
+},
+
+{
+arabic:"أَبُو الْأَئِمَّةِ ؑ",
+urdu:"ائمہ کے والد"
+},
+
+{
+arabic:"أَفْضَلُ الْوَصِيِّينَ ؑ",
+urdu:"اوصیاء میں افضل"
+},
+
+{
+arabic:"قَائِدُ الْغُرِّ الْمُحَجَّلِينَ ؑ",
+urdu:"روشن چہروں والوں کے قائد"
+},
+
+{
+arabic:"الْعَالِمُ ؑ",
+urdu:"علم والے"
+},
+{
+arabic:"أَسَدُ الْإِسْلَامِ ؑ",
+urdu:"اسلام کا شیر"
+},
+
+{
+arabic:"زَيْنُ الْعِبَادِ ؑ",
+urdu:"عبادت کرنے والوں کی زینت"
+},
+
+{
+arabic:"إِمَامُ الْهُدَىٰ ؑ",
+urdu:"ہدایت کے امام"
+},
+
+{
+arabic:"مَوْلَى الْمُؤْمِنِينَ ؑ",
+urdu:"مؤمنوں کے مولا"
+},
+
+{
+arabic:"صِدِّيقُ الْأَكْبَرِ ؑ",
+urdu:"سب سے بڑے صدیق"
+},
+
+{
+arabic:"الْفَارُوقُ الْأَعْظَمُ ؑ",
+urdu:"حق و باطل میں فرق کرنے والے"
+},
+
+{
+arabic:"سَيِّدُ الْأَوْصِيَاءِ ؑ",
+urdu:"اوصیاء کے سردار"
+},
+
+{
+arabic:"بَابُ الْهُدَىٰ ؑ",
+urdu:"ہدایت کا دروازہ"
+},
+
+{
+arabic:"بَحْرُ الْعِلْمِ ؑ",
+urdu:"علم کا سمندر"
+},
+
+{
+arabic:"إِمَامُ الْعَدْلِ ؑ",
+urdu:"عدل کے امام"
+},
+
+{
+arabic:"مِفْتَاحُ الْجَنَّةِ ؑ",
+urdu:"جنت کی کنجی"
+},
+
+{
+arabic:"نَفْسُ رَسُولِ اللّٰهِ ﷺ",
+urdu:"رسول اللہ ﷺ کا نفس"
+},
+
+{
+arabic:"خَيْرُ الْوَصِيِّينَ ؑ",
+urdu:"بہترین وصی"
+},
+
+{
+arabic:"الْهَادِي ؑ",
+urdu:"ہدایت دینے والے"
+},
+
+{
+arabic:"الزَّاهِدُ ؑ",
+urdu:"زاہد"
+}
+
+];
+
+
+
+/*==================================
+        ASMA VARIABLES
+==================================*/
+
+let currentList = allahNames;
+
+let currentIndex = 0;
+
+
+
+/*==================================
+        ASMA ELEMENTS
+==================================*/
+
+const arabicText = document.getElementById("ismArabic");
+
+const urduText = document.getElementById("ismUrdu");
+
+const allahTab = document.getElementById("allahTab");
+
+const fatimaTab = document.getElementById("fatimaTab");
+
+const muhammadTab = document.getElementById("muhammadTab");
+
+const aliTab = document.getElementById("aliTab");
+
+const nextBtn = document.getElementById("nextBtn");
+
+const prevBtn = document.getElementById("prevBtn");
+
+
+
+/*==================================
+        SHOW CURRENT NAME
+==================================*/
+
+function showIsm(){
+
+    const currentName = currentList[currentIndex];
+
+    arabicText.textContent = currentName.arabic;
+
+    urduText.textContent = currentName.urdu;
+
+}
+
+
+
+/*==================================
+        ACTIVE TAB
+==================================*/
+
+function setActiveTab(activeButton){
+
+    allahTab.classList.remove("activeTab");
+
+    fatimaTab.classList.remove("activeTab");
+
+    muhammadTab.classList.remove("activeTab");
+
+    aliTab.classList.remove("activeTab");
+
+    activeButton.classList.add("activeTab");
+
+}
+
+
+
+/*==================================
+        NEXT BUTTON
+==================================*/
+
+nextBtn.addEventListener("click", function(){
+
+    currentIndex++;
+
+    if(currentIndex >= currentList.length){
+
+        currentIndex = 0;
+
+    }
+
+    showIsm();
+
+});
+
+
+
+/*==================================
+        PREVIOUS BUTTON
+==================================*/
+
+prevBtn.addEventListener("click", function(){
+
+    currentIndex--;
+
+    if(currentIndex < 0){
+
+        currentIndex = currentList.length - 1;
+
+    }
+
+    showIsm();
+
+});
+
+
+
+
+
+/*==================================
+        CATEGORY BUTTONS
+==================================*/
+
+
+/* ---------- ALLAH ---------- */
+
+allahTab.addEventListener("click", function(){
+
+    currentList = allahNames;
+
+    currentIndex = 0;
+
+    setActiveTab(allahTab);
+
+    showIsm();
+
+});
+
+
+/* ---------- MUHAMMAD ﷺ ---------- */
+
+muhammadTab.addEventListener("click", function(){
+
+    currentList = muhammadNames;
+
+    currentIndex = 0;
+
+    setActiveTab(muhammadTab);
+
+    showIsm();
+
+});
+
+
+
+
+/* ---------- FATIMA علیہا السلام ---------- */
+
+fatimaTab.addEventListener("click", function(){
+
+    currentList = fatimaNames;
+
+    currentIndex = 0;
+
+    setActiveTab(fatimaTab);
+
+    showIsm();
+
+});
+
+
+/* ---------- ALI علیہ السلام ---------- */
+
+aliTab.addEventListener("click", function(){
+
+    currentList = aliNames;
+
+    currentIndex = 0;
+
+    setActiveTab(aliTab);
+
+    showIsm();
+
+});
+
+
+
+
+/*==================================
+        START
+==================================*/
+
+setActiveTab(allahTab);
+
+showIsm();
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/* FUTURE JAVASCRIPT END */
+/* ============================= */
+/* ============================= */
+/* AUTO BISMILLAH */
+/* ============================= */
+
+const BISMILLAH = "بِسْمِ اللَّهِ الرَّحْمٰنِ الرَّحِيمِ";
+
+document.querySelectorAll(".bismillahBox").forEach(function(box){
+
+    box.textContent = BISMILLAH;
+
+});
+</script>
+
+<script src="duas.js"></script>
+
+
+</body>
+
+</html>
