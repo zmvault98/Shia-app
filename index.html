@@ -4,7 +4,7 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
 
 <title>Islamic App</title>
 
@@ -733,13 +733,13 @@ width:100%;
 
 text-align:center;
 
-font-size:27px;
+font-size:16px;
 
 font-weight:700;
 
 color:#ffffff;
 
-margin:8px 0 28px;
+margin:8px 0 18px;
 
 letter-spacing:.3px;
 
@@ -915,12 +915,12 @@ color:#FFD56A;
 text-align:right;
 
 margin-bottom:12px;
-
+font-family:"Gulzar";
 }
 
 .readingArabic{
 
-
+font-family:"NoorHuda";
 
 font-size:22px;
 
@@ -1392,7 +1392,7 @@ direction:rtl;
 
 text-align:right;
 
-font-family:'Reading Urdu';
+font-family:"Gulzar";
 
 color:#ffffff;
 
@@ -1893,6 +1893,33 @@ transition:.25s;
 transform:scale(.98);
 
 }
+
+
+
+.readingBismillah{
+
+font-family:"NoorHuda";
+
+font-size:28px;
+
+text-align:center;
+
+direction:rtl;
+
+color:#D8B36C;
+
+margin:18px 0 25px;
+
+background:none;
+
+border:none;
+
+box-shadow:none;
+
+width:100%;
+
+}
+
 
 /* ============================= */
 /* FUTURE CSS END */
@@ -3736,6 +3763,9 @@ C37 14 42 20 42 30"/>
 
 </div>
 
+
+
+
 </div>
 
 <div id="taqibatPage" class="page">
@@ -3754,6 +3784,453 @@ C37 14 42 20 42 30"/>
 
 <div class="pageContent">
 
+<div class="duaSearchContainer">
+
+<svg class="duaSearchIcon" viewBox="0 0 24 24">
+
+<circle cx="11" cy="11" r="7"></circle>
+
+<line x1="20" y1="20" x2="16.5" y2="16.5"></line>
+
+</svg>
+
+<input
+type="text"
+id="taqibatSearchInput"
+class="duaSearchInput"
+placeholder="Search Taqeebat..."
+autocomplete="off"
+spellcheck="false">
+
+</div>
+<div id="taqibatList">
+
+<!-- Buttons yahan aayenge -->
+<div class="listButton" onclick="openTaqibat(1)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Morning Taqeebat
+        </div>
+
+        <div class="listUrdu">
+            تعقیبات نمازِ صبح
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+
+<div class="listButton" onclick="openTaqibat(2)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Zuhr Taqeebat
+        </div>
+
+        <div class="listUrdu">
+            تعقیبات نمازِ ظہر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openTaqibat(3)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Asr Taqeebat
+        </div>
+
+        <div class="listUrdu">
+            تعقیبات نمازِ عصر
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openTaqibat(4)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Maghrib Taqeebat
+        </div>
+
+        <div class="listUrdu">
+            تعقیبات نمازِ مغرب
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openTaqibat(5)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Isha Taqeebat
+        </div>
+
+        <div class="listUrdu">
+            تعقیبات نمازِ عشاء
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+<div class="listButton" onclick="openTaqibat(6)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Common Taqeebat
+        </div>
+
+        <div class="listUrdu">
+            مشترکہ تعقیبات
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+<!-- =======================
+     BUTTON 7
+======================= -->
+
+<div class="listButton" onclick="openTaqibat(7)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Tasbeeh Zahra (sa)
+        </div>
+
+        <div class="listUrdu">
+            تسبیح حضرت زہراءؑ
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+<!-- =======================
+     BUTTON 8
+======================= -->
+
+<div class="listButton" onclick="openTaqibat(8)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Ayat-ul-Kursi
+        </div>
+
+        <div class="listUrdu">
+            آیت الکرسی
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+<!-- =======================
+     BUTTON 9
+======================= -->
+
+<div class="listButton" onclick="openTaqibat(9)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Tasbeehat Arba
+        </div>
+
+        <div class="listUrdu">
+            تسبیحات اربعہ
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+<!-- =======================
+     BUTTON 10
+======================= -->
+
+<div class="listButton" onclick="openTaqibat(10)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Dua-e-Hifazat
+        </div>
+
+        <div class="listUrdu">
+            دعائے حفاظت
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+<!-- =======================
+     BUTTON 11
+======================= -->
+
+<div class="listButton" onclick="openTaqibat(11)">
+
+    <div class="listIcon">
+
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <circle cx="32" cy="32" r="4"/>
+        </svg>
+
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Ayat-e-Hifazat
+        </div>
+
+        <div class="listUrdu">
+            آیاتِ حفاظت
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
 </div>
 
 </div>
@@ -8929,7 +9406,45 @@ showIsm();
 
 
 
+/*==================================
+      TAQIBAT SEARCH
+==================================*/
 
+document.addEventListener("DOMContentLoaded", function () {
+
+    const taqibatSearch =
+        document.getElementById("taqibatSearchInput");
+
+    if(!taqibatSearch) return;
+
+    taqibatSearch.addEventListener("input", function () {
+
+        const search =
+            this.value.toLowerCase().trim();
+
+        const buttons =
+            document.querySelectorAll("#taqibatList .listButton");
+
+        buttons.forEach(function(button){
+
+            const text =
+                button.textContent.toLowerCase();
+
+            if(text.includes(search)){
+
+                button.style.display = "flex";
+
+            }else{
+
+                button.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
 
 
 
@@ -8955,6 +9470,96 @@ document.querySelectorAll(".bismillahBox").forEach(function(box){
 </script>
 
 <script src="duas.js"></script>
+
+
+
+
+
+
+<!-- ===================================== -->
+<!-- TAQIBAT READING PAGE -->
+<!-- ===================================== -->
+
+<div id="taqibatReadingPage" class="page">
+
+    <div class="pageHeader">
+
+        <button class="backBtn" onclick="goBack()">
+            <svg viewBox="0 0 24 24">
+                <path d="M15 18L9 12L15 6"/>
+            </svg>
+        </button>
+
+        <h2 id="readingTitle">
+            تعقیبات
+        </h2>
+
+    </div>
+
+    <div class="pageContent">
+<div class="duaCard">
+        <div class="readingPage">
+
+            <div class="readingTitle" id="readingEnglishTitle">
+                Taqibat
+            </div>
+
+            <div class="readingBismillah"></div>
+<div class="duaDivider">❀</div>
+            <div class="readingBody">
+
+                <div class="readingArabic" id="readingArabic">
+
+                </div>
+
+            </div>
+
+            <div class="translationCard">
+<div class="duaDivider">❀</div>
+                <div class="translationTitle">
+                    ترجمہ
+                </div>
+
+                <div class="readingUrdu" id="readingUrdu">
+
+                </div>
+
+            </div>
+
+            <div class="referenceCard">
+
+                <div class="referenceHeader"
+                     onclick="toggleReference(this)">
+
+                    <div class="referenceTitle">
+
+                        <svg class="referenceIcon" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zm0 7L2 4v13l10 5 10-5V4l-10 5z"/>
+                        </svg>
+
+                        حوالہ
+
+                    </div>
+
+                    <span class="referenceArrow">▼</span>
+
+                </div>
+
+                <div class="referenceContent"
+                     id="readingReference">
+
+                </div>
+
+            </div>
+
+        </div>
+</div>
+    </div>
+
+</div>
+
+
+
 
 
 </body>
