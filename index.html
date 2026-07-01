@@ -948,11 +948,15 @@ font-family:"Gulzar";
 
 .readingArabic{
 
+transform:scaleY(1.03);
+
+transform-origin:center;
+
 font-family:"NoorHuda";
 
 font-size:24px;
 
-font-weight:100;
+font-weight:500;
 
 direction:rtl;
 
@@ -1467,7 +1471,7 @@ transition:.3s;
 /* ===================================== */
 .duaCard{
 
-width:calc(100% - 10px);
+width:100%;
 
 background: #072E2D;
 background:
@@ -1478,10 +1482,10 @@ rgba(255,255,255,0) 18%
 ),
 #0c201e;
 border:1px solid rgba(255,255,255,.08);
-border-radius:18px;
+border-radius:1px;
 box-shadow:0 10px 30px rgba(0,0,0,.30);
 padding:22px;
-margin:18px auto;
+margin:0%;
 overflow:hidden;
 
 }
@@ -1953,6 +1957,38 @@ width:100%;
 
 }
 
+
+
+
+/* ===== SAHIFA ONLY ===== */
+
+.listText{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    text-align:left;
+    overflow:hidden;
+}
+
+.listEnglish{
+    width:100%;
+    text-align:left;
+    font-size:12px;
+    font-weight:700;
+    line-height:1.3;
+    color:#888;
+}
+
+.listUrdu{
+    width:100%;
+    text-align:right;
+    margin-top:4px;
+    font-size:12px;
+    color:#fff;
+    line-height:1.4;
+}
 
 /* ============================= */
 /* FUTURE CSS END */
@@ -3768,6 +3804,1530 @@ C37 14 42 20 42 30"/>
 
 
 
+</div>
+</div>
+
+
+
+
+<!-- ===================================== -->
+<!-- Sahifa Page -->
+<!-- ===================================== -->
+
+<div id="sahifaPage" class="page">
+
+<div class="pageHeader">
+
+<button class="backBtn" onclick="goBack()">
+<svg viewBox="0 0 24 24">
+<path d="M15 18L9 12L15 6"/>
+</svg>
+</button>
+
+<h2>صحیفہ سجادیہ</h2>
+
+</div>
+
+<div class="pageContent">
+
+<!--========== SAHIFA SEARCH ==========-->
+
+<div class="duaSearchContainer">
+
+    <svg class="duaSearchIcon"
+         viewBox="0 0 24 24">
+
+        <circle cx="11"
+                cy="11"
+                r="7"></circle>
+
+        <line x1="20"
+              y1="20"
+              x2="16.5"
+              y2="16.5"></line>
+
+    </svg>
+
+    <input
+        type="text"
+        id="sahifaSearchInput"
+        class="duaSearchInput"
+        placeholder="Search Sahifa..."
+        autocomplete="off"
+        spellcheck="false">
+
+</div>
+
+<!--========== SAHIFA LIST ==========-->
+
+<div id="sahifaList">
+
+
+
+
+<!-- ============================= -->
+<!-- SAHIFA 1 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(101)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">1</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">In Praise of Allah</div>
+        <div class="listUrdu">خداوند عالم کی حمد و ثناء</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 2 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(102)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">2</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Blessings upon Prophet Muhammad (ﷺ)</div>
+        <div class="listUrdu">پیغمبر اسلام ﷺ پر درود و سلام</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 3 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(103)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">3</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Blessings upon the Bearers of the Throne</div>
+        <div class="listUrdu">حاملانِ عرش پر درود و سلام</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 4 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(104)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">4</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Blessings upon the Confirmers of the Messengers</div>
+        <div class="listUrdu">انبیاء علیہم السلام پر ایمان لانے والوں پر درود و سلام</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 5 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(105)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">5</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">For Himself and His Friends</div>
+        <div class="listUrdu">اپنے اور اپنے دوستوں کے لئے دعا</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 6 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(106)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">6</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Morning and Evening</div>
+        <div class="listUrdu">صبح و شام کی دعا</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 7 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(107)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">7</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">In Times of Worry</div>
+        <div class="listUrdu">مشکلات اور پریشانیوں کے وقت کی دعا</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 8 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(108)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">8</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Seeking Refuge</div>
+        <div class="listUrdu">پناہ کے سلسلے کی دعا</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 9 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(109)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">9</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Seeking Forgiveness</div>
+        <div class="listUrdu">طلب مغفرت کی دعا</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 10 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(110)">
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">10</text>
+        </svg>
+    </div>
+    <div class="listText">
+        <div class="listEnglish">Seeking Protection</div>
+        <div class="listUrdu">پناہ طلب کرنے کی دعا</div>
+    </div>
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 11 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(111)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">11</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For Good Outcomes</div>
+        <div class="listUrdu">انجام بخیر ہونے کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 12 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(112)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">12</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Confession and Repentance</div>
+        <div class="listUrdu">اعترافِ گناہ اور طلبِ توبہ کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 13 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(113)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">13</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Seeking Needs</div>
+        <div class="listUrdu">طلبِ حاجات کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 14 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(114)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">14</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Seeking Justice</div>
+        <div class="listUrdu">دادخواہی کی بابت کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 15 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(115)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">15</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">When Sick</div>
+        <div class="listUrdu">مرض کے دفعیہ کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 16 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(116)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">16</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Seeking Pardon</div>
+        <div class="listUrdu">عذر و عفوِ تقصیر کے سلسلے میں دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 17 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(117)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">17</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Against Satan</div>
+        <div class="listUrdu">شر شیطان کے دفعیہ کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 18 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(118)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">18</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Repelling Afflictions</div>
+        <div class="listUrdu">رفعِ بلیات کے سلسلے میں دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 19 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(119)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">19</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For Rain</div>
+        <div class="listUrdu">طلبِ باراں کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 20 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(120)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">20</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Noble Moral Traits</div>
+        <div class="listUrdu">پاکیزہ اخلاق سے آراستگی کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24"><path d="M8 5L16 12L8 19"/></svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 21 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(121)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">21</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">In Sorrow</div>
+        <div class="listUrdu">رنج و اندوہ کے موقع کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 22 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(122)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">22</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">In Hardship</div>
+        <div class="listUrdu">شدت و سختی کے وقت کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 23 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(123)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">23</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For Well-Being</div>
+        <div class="listUrdu">طلبِ عافیت کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 24 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(124)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">24</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For Parents</div>
+        <div class="listUrdu">والدین کے حق میں دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 25 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(125)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">25</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For Children</div>
+        <div class="listUrdu">اولاد کے حق میں حضرت کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 26 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(126)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">26</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For Neighbours and Friends</div>
+        <div class="listUrdu">ہمسایوں اور دوستوں کے لئے دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 27 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(127)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">27</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">For the Frontier Guards</div>
+        <div class="listUrdu">سرحدوں کے محافظوں کے لئے دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 28 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(128)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">28</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Supplication before Allah</div>
+        <div class="listUrdu">اللہ سے تضرع و زاری کے سلسلے میں دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 29 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(129)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">29</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">When Provision is Limited</div>
+        <div class="listUrdu">تنگیِ رزق کے موقع پر پڑھنے کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 30 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(130)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">30</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Repaying Debts</div>
+        <div class="listUrdu">ادائے قرض کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 31 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(131)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">31</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Repentance</div>
+        <div class="listUrdu">دعائے توبہ</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 32 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(132)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">32</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">After the Night Prayer</div>
+        <div class="listUrdu">نمازِ شب کے بعد کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 33 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(133)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">33</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Seeking Guidance (Istikhara)</div>
+        <div class="listUrdu">دعائے استخارہ</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 34 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(134)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">34</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Protection from Disgrace</div>
+        <div class="listUrdu">گناہوں کی رسوائی سے بچنے کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 35 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(135)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">35</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">Contentment with Allah's Decree</div>
+        <div class="listUrdu">رضائے الٰہی پر خوش رہنے کی دعا</div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 36 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(136)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">36</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">
+            Upon Seeing Clouds,
+            Lightning and Thunder
+        </div>
+
+        <div class="listUrdu">
+            بادل اور بجلی کو دیکھتے اور رعد کی آواز
+        </div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 37 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(137)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">37</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">
+            In Thankfulness
+        </div>
+
+        <div class="listUrdu">
+            ادائے شکر میں کوتاہی کی دعا
+        </div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 38 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(138)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">38</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">
+            Seeking Forgiveness
+            and Mercy
+        </div>
+
+        <div class="listUrdu">
+            عذر و مغفرت کے سلسلے میں دعا
+        </div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 39 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(139)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">39</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">
+            Seeking Pardon
+            and Mercy
+        </div>
+
+        <div class="listUrdu">
+            طلبِ عفو و رحمت کی دعا
+        </div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 40 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(140)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">40</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+        <div class="listEnglish">
+            Remembering Death
+        </div>
+
+        <div class="listUrdu">
+            موت کو یاد کرنے کے وقت کی دعا
+        </div>
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 41 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(141)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">41</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Concealment
+            and Protection
+        </div>
+
+        <div class="listUrdu">
+            پردہ پوشی و نگہداشت کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 42 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(142)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">42</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Upon Completing
+            the Qur'an
+        </div>
+
+        <div class="listUrdu">
+            قرآن ختم کرنے کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 43 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(143)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">43</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Upon Sighting
+            the New Moon
+        </div>
+
+        <div class="listUrdu">
+            رویتِ ہلال کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 44 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(144)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">44</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Welcoming
+            Ramadan
+        </div>
+
+        <div class="listUrdu">
+            ماہ رمضان کے استقبال کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 45 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(145)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">45</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Farewell
+            to Ramadan
+        </div>
+
+        <div class="listUrdu">
+            ماہ رمضان کو الوداع کرنے کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 46 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(146)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">46</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            For Eid
+            and Friday
+        </div>
+
+        <div class="listUrdu">
+            عیدین اور جمعہ کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 47 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(147)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">47</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            On the Day
+            of Arafah
+        </div>
+
+        <div class="listUrdu">
+            روز عرفہ کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 48 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(148)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">48</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            For Eid al-Adha
+            and Friday
+        </div>
+
+        <div class="listUrdu">
+            عید قربان اور جمعہ کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 49 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(149)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">49</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Against the
+            Enemy's Plot
+        </div>
+
+        <div class="listUrdu">
+            دشمن کے مکر و فریب کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 50 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(150)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">50</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            In Fear
+            of Allah
+        </div>
+
+        <div class="listUrdu">
+            خوفِ الٰہی کے سلسلے میں حضرت کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 51 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(151)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">51</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Humility
+            before Allah
+        </div>
+
+        <div class="listUrdu">
+            عجز و زاری کے سلسلے میں دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 52 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(152)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">52</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Earnest
+            Supplication
+        </div>
+
+        <div class="listUrdu">
+            تضرع و الحاح کے سلسلے میں دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 53 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(153)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">53</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Humbleness
+            before Allah
+        </div>
+
+        <div class="listUrdu">
+            عجز و فروتنی کے سلسلے میں دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
+
+<!-- ============================= -->
+<!-- SAHIFA 54 -->
+<!-- ============================= -->
+
+<div class="listButton sahifaItem" onclick="openSahifa(154)">
+
+    <div class="listIcon">
+        <svg viewBox="0 0 64 64">
+            <path d="M32 8L36 22L50 18L42 32L56 36L42 40L50 54L36 50L32 56L28 50L14 54L22 40L8 36L22 32L14 18L28 22Z"/>
+            <text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="currentColor">54</text>
+        </svg>
+    </div>
+
+    <div class="listText">
+
+        <div class="listEnglish">
+            Removal
+            of Sorrow
+        </div>
+
+        <div class="listUrdu">
+            رنج و اندوہ کے دور ہونے کی دعا
+        </div>
+
+    </div>
+
+    <div class="listArrow">
+        <svg viewBox="0 0 24 24">
+            <path d="M8 5L16 12L8 19"/>
+        </svg>
+    </div>
+
+</div>
 
 
 
@@ -3776,17 +5336,31 @@ C37 14 42 20 42 30"/>
 
 
 
+    <!--================================================-->
+    <!--          Remaining 53 Sahifa Buttons           -->
+    <!--================================================-->
 
-
-
-
-
+</div>
 
 
 
 
 </div>
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <div id="ziaratPage" class="page">
@@ -7207,6 +8781,10 @@ spellcheck="false">
 
 
 
+
+
+
+
 <!-- ============================= -->
 <!-- FUTURE PAGES END -->
 <!-- ============================= -->
@@ -7454,6 +9032,7 @@ pageHistory.push(visible.id);
 
 }
 
+
 hidePages();
 
 document.getElementById(id).style.display="block";
@@ -7512,6 +9091,40 @@ goBack();
 });
 
 
+
+/* ============================= */
+/* SAHIFA OPEN */
+/* ============================= */
+
+function openSahifa(id){
+
+    const item = sahifa.find(function(s){
+        return s.id === id;
+    });
+
+    if(!item){
+        alert("Sahifa not found");
+        return;
+    }
+
+    document.getElementById("duaTitle").textContent =
+    item.english;
+
+    document.getElementById("duaBismillah").textContent =
+    item.bismillah;
+
+    document.getElementById("duaArabic").innerHTML =
+    item.arabic;
+
+    document.getElementById("duaTranslation").innerHTML =
+    item.translation;
+
+    document.getElementById("duaReference").innerHTML =
+    item.reference;
+
+    openPage("duaDetailPage");
+
+}
 
 
 /* ===================================== */
@@ -9514,7 +11127,7 @@ document.querySelectorAll(".bismillahBox").forEach(function(box){
 </script>
 
 <script src="duas.js"></script>
-
+<script src="sahifa.js"></script>
 
 
 
